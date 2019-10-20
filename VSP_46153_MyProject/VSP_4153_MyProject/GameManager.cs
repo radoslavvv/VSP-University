@@ -153,14 +153,14 @@ namespace VSP_4153_MyProject
                                 {
                                     this.currentLevelBlocksCount++;
 
-                                    this.gameBlocksShowTime -= 25;
+                                    this.gameBlocksShowTime -= 50;
                                 }
 
                             }
                             else
                             {
-                                this.ColorBlocks(this.CurrentLevelBlocks, Color.IndianRed);
-                                this.ColorBlocks(this.SelectedBlocks, Color.PaleVioletRed);
+                                this.ColorBlocks(this.CurrentLevelBlocks, Color.DarkRed);
+                                this.ColorBlocks(this.SelectedBlocks, Color.IndianRed);
 
                                 Control startButton = this.gameBoard.Controls.Find("StartButton", true).First();
                                 startButton.Visible = true;

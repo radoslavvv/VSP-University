@@ -67,7 +67,7 @@
             // 
             this.ScoreLabel.AutoSize = true;
             this.ScoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScoreLabel.Location = new System.Drawing.Point(51, 892);
+            this.ScoreLabel.Location = new System.Drawing.Point(41, 892);
             this.ScoreLabel.Name = "ScoreLabel";
             this.ScoreLabel.Size = new System.Drawing.Size(70, 25);
             this.ScoreLabel.TabIndex = 7;
@@ -76,7 +76,7 @@
             // panel44
             // 
             this.panel44.BackColor = System.Drawing.Color.LightGray;
-            this.panel44.Location = new System.Drawing.Point(390, 393);
+            this.panel44.Location = new System.Drawing.Point(390, 397);
             this.panel44.Name = "panel44";
             this.panel44.Size = new System.Drawing.Size(110, 110);
             this.panel44.TabIndex = 15;
@@ -86,7 +86,7 @@
             // panel43
             // 
             this.panel43.BackColor = System.Drawing.Color.LightGray;
-            this.panel43.Location = new System.Drawing.Point(265, 393);
+            this.panel43.Location = new System.Drawing.Point(265, 397);
             this.panel43.Name = "panel43";
             this.panel43.Size = new System.Drawing.Size(110, 110);
             this.panel43.TabIndex = 14;
@@ -96,7 +96,7 @@
             // panel42
             // 
             this.panel42.BackColor = System.Drawing.Color.LightGray;
-            this.panel42.Location = new System.Drawing.Point(139, 393);
+            this.panel42.Location = new System.Drawing.Point(139, 397);
             this.panel42.Name = "panel42";
             this.panel42.Size = new System.Drawing.Size(110, 110);
             this.panel42.TabIndex = 13;
@@ -106,7 +106,7 @@
             // panel41
             // 
             this.panel41.BackColor = System.Drawing.Color.LightGray;
-            this.panel41.Location = new System.Drawing.Point(14, 393);
+            this.panel41.Location = new System.Drawing.Point(14, 397);
             this.panel41.Name = "panel41";
             this.panel41.Size = new System.Drawing.Size(110, 110);
             this.panel41.TabIndex = 12;
@@ -116,7 +116,7 @@
             // panel34
             // 
             this.panel34.BackColor = System.Drawing.Color.LightGray;
-            this.panel34.Location = new System.Drawing.Point(390, 266);
+            this.panel34.Location = new System.Drawing.Point(390, 270);
             this.panel34.Name = "panel34";
             this.panel34.Size = new System.Drawing.Size(110, 110);
             this.panel34.TabIndex = 11;
@@ -126,7 +126,7 @@
             // panel33
             // 
             this.panel33.BackColor = System.Drawing.Color.LightGray;
-            this.panel33.Location = new System.Drawing.Point(265, 266);
+            this.panel33.Location = new System.Drawing.Point(265, 270);
             this.panel33.Name = "panel33";
             this.panel33.Size = new System.Drawing.Size(110, 110);
             this.panel33.TabIndex = 10;
@@ -136,7 +136,7 @@
             // panel32
             // 
             this.panel32.BackColor = System.Drawing.Color.LightGray;
-            this.panel32.Location = new System.Drawing.Point(139, 266);
+            this.panel32.Location = new System.Drawing.Point(139, 270);
             this.panel32.Name = "panel32";
             this.panel32.Size = new System.Drawing.Size(110, 110);
             this.panel32.TabIndex = 9;
@@ -146,7 +146,7 @@
             // panel31
             // 
             this.panel31.BackColor = System.Drawing.Color.LightGray;
-            this.panel31.Location = new System.Drawing.Point(14, 266);
+            this.panel31.Location = new System.Drawing.Point(14, 270);
             this.panel31.Name = "panel31";
             this.panel31.Size = new System.Drawing.Size(110, 110);
             this.panel31.TabIndex = 8;
@@ -156,9 +156,9 @@
             // StartButton
             // 
             this.StartButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StartButton.Location = new System.Drawing.Point(211, 878);
+            this.StartButton.Location = new System.Drawing.Point(222, 878);
             this.StartButton.Name = "StartButton";
-            this.StartButton.Size = new System.Drawing.Size(297, 56);
+            this.StartButton.Size = new System.Drawing.Size(293, 56);
             this.StartButton.TabIndex = 5;
             this.StartButton.Text = "Start";
             this.StartButton.UseVisualStyleBackColor = true;
@@ -167,7 +167,7 @@
             // panel24
             // 
             this.panel24.BackColor = System.Drawing.Color.LightGray;
-            this.panel24.Location = new System.Drawing.Point(390, 140);
+            this.panel24.Location = new System.Drawing.Point(390, 144);
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(110, 110);
             this.panel24.TabIndex = 7;
@@ -177,7 +177,7 @@
             // panel22
             // 
             this.panel22.BackColor = System.Drawing.Color.LightGray;
-            this.panel22.Location = new System.Drawing.Point(139, 140);
+            this.panel22.Location = new System.Drawing.Point(139, 144);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(110, 110);
             this.panel22.TabIndex = 5;
@@ -187,7 +187,7 @@
             // panel21
             // 
             this.panel21.BackColor = System.Drawing.Color.LightGray;
-            this.panel21.Location = new System.Drawing.Point(14, 140);
+            this.panel21.Location = new System.Drawing.Point(14, 144);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(110, 110);
             this.panel21.TabIndex = 4;
@@ -197,7 +197,7 @@
             // panel14
             // 
             this.panel14.BackColor = System.Drawing.Color.LightGray;
-            this.panel14.Location = new System.Drawing.Point(390, 12);
+            this.panel14.Location = new System.Drawing.Point(390, 16);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(110, 110);
             this.panel14.TabIndex = 3;
@@ -207,7 +207,7 @@
             // panel13
             // 
             this.panel13.BackColor = System.Drawing.Color.LightGray;
-            this.panel13.Location = new System.Drawing.Point(265, 12);
+            this.panel13.Location = new System.Drawing.Point(265, 16);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(110, 110);
             this.panel13.TabIndex = 2;
@@ -217,7 +217,7 @@
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.LightGray;
-            this.panel12.Location = new System.Drawing.Point(139, 12);
+            this.panel12.Location = new System.Drawing.Point(139, 16);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(110, 110);
             this.panel12.TabIndex = 1;
@@ -227,7 +227,7 @@
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.LightGray;
-            this.panel11.Location = new System.Drawing.Point(14, 12);
+            this.panel11.Location = new System.Drawing.Point(14, 16);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(110, 110);
             this.panel11.TabIndex = 0;
@@ -238,7 +238,7 @@
             // 
             this.ScoreValue.AutoSize = true;
             this.ScoreValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScoreValue.Location = new System.Drawing.Point(127, 892);
+            this.ScoreValue.Location = new System.Drawing.Point(117, 892);
             this.ScoreValue.Name = "ScoreValue";
             this.ScoreValue.Size = new System.Drawing.Size(23, 25);
             this.ScoreValue.TabIndex = 6;
@@ -247,7 +247,7 @@
             // panel23
             // 
             this.panel23.BackColor = System.Drawing.Color.LightGray;
-            this.panel23.Location = new System.Drawing.Point(265, 140);
+            this.panel23.Location = new System.Drawing.Point(265, 144);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(110, 110);
             this.panel23.TabIndex = 6;
@@ -282,15 +282,15 @@
             this.GameBoard.Controls.Add(this.panel12);
             this.GameBoard.Controls.Add(this.panel33);
             this.GameBoard.Controls.Add(this.panel32);
-            this.GameBoard.Location = new System.Drawing.Point(47, 181);
+            this.GameBoard.Location = new System.Drawing.Point(46, 180);
             this.GameBoard.Name = "GameBoard";
-            this.GameBoard.Size = new System.Drawing.Size(640, 652);
+            this.GameBoard.Size = new System.Drawing.Size(644, 650);
             this.GameBoard.TabIndex = 4;
             // 
             // panel54
             // 
             this.panel54.BackColor = System.Drawing.Color.LightGray;
-            this.panel54.Location = new System.Drawing.Point(390, 522);
+            this.panel54.Location = new System.Drawing.Point(390, 526);
             this.panel54.Name = "panel54";
             this.panel54.Size = new System.Drawing.Size(110, 110);
             this.panel54.TabIndex = 26;
@@ -300,7 +300,7 @@
             // panel55
             // 
             this.panel55.BackColor = System.Drawing.Color.LightGray;
-            this.panel55.Location = new System.Drawing.Point(515, 522);
+            this.panel55.Location = new System.Drawing.Point(515, 526);
             this.panel55.Name = "panel55";
             this.panel55.Size = new System.Drawing.Size(110, 110);
             this.panel55.TabIndex = 27;
@@ -310,7 +310,7 @@
             // panel53
             // 
             this.panel53.BackColor = System.Drawing.Color.LightGray;
-            this.panel53.Location = new System.Drawing.Point(265, 522);
+            this.panel53.Location = new System.Drawing.Point(265, 526);
             this.panel53.Name = "panel53";
             this.panel53.Size = new System.Drawing.Size(110, 110);
             this.panel53.TabIndex = 25;
@@ -320,7 +320,7 @@
             // panel52
             // 
             this.panel52.BackColor = System.Drawing.Color.LightGray;
-            this.panel52.Location = new System.Drawing.Point(139, 522);
+            this.panel52.Location = new System.Drawing.Point(139, 526);
             this.panel52.Name = "panel52";
             this.panel52.Size = new System.Drawing.Size(110, 110);
             this.panel52.TabIndex = 24;
@@ -330,7 +330,7 @@
             // panel51
             // 
             this.panel51.BackColor = System.Drawing.Color.LightGray;
-            this.panel51.Location = new System.Drawing.Point(14, 522);
+            this.panel51.Location = new System.Drawing.Point(14, 526);
             this.panel51.Name = "panel51";
             this.panel51.Size = new System.Drawing.Size(110, 110);
             this.panel51.TabIndex = 23;
@@ -340,7 +340,7 @@
             // panel45
             // 
             this.panel45.BackColor = System.Drawing.Color.LightGray;
-            this.panel45.Location = new System.Drawing.Point(515, 393);
+            this.panel45.Location = new System.Drawing.Point(515, 397);
             this.panel45.Name = "panel45";
             this.panel45.Size = new System.Drawing.Size(110, 110);
             this.panel45.TabIndex = 22;
@@ -350,7 +350,7 @@
             // panel25
             // 
             this.panel25.BackColor = System.Drawing.Color.LightGray;
-            this.panel25.Location = new System.Drawing.Point(515, 140);
+            this.panel25.Location = new System.Drawing.Point(515, 144);
             this.panel25.Name = "panel25";
             this.panel25.Size = new System.Drawing.Size(110, 110);
             this.panel25.TabIndex = 18;
@@ -360,7 +360,7 @@
             // panel15
             // 
             this.panel15.BackColor = System.Drawing.Color.LightGray;
-            this.panel15.Location = new System.Drawing.Point(515, 12);
+            this.panel15.Location = new System.Drawing.Point(515, 16);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(110, 110);
             this.panel15.TabIndex = 16;
@@ -370,7 +370,7 @@
             // panel35
             // 
             this.panel35.BackColor = System.Drawing.Color.LightGray;
-            this.panel35.Location = new System.Drawing.Point(515, 266);
+            this.panel35.Location = new System.Drawing.Point(515, 270);
             this.panel35.Name = "panel35";
             this.panel35.Size = new System.Drawing.Size(110, 110);
             this.panel35.TabIndex = 20;
@@ -380,7 +380,7 @@
             // ReturnHomeButton
             // 
             this.ReturnHomeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReturnHomeButton.Location = new System.Drawing.Point(557, 878);
+            this.ReturnHomeButton.Location = new System.Drawing.Point(571, 878);
             this.ReturnHomeButton.Name = "ReturnHomeButton";
             this.ReturnHomeButton.Size = new System.Drawing.Size(119, 56);
             this.ReturnHomeButton.TabIndex = 8;
@@ -424,7 +424,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "GameBoard5By5";
-            this.Text = "6x6 - Medium Mode";
+            this.Text = "5x5 - Medium Mode";
             this.GameBoard.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
