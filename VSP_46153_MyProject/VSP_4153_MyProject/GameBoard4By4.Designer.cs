@@ -48,6 +48,7 @@
             this.StartButton = new System.Windows.Forms.Button();
             this.ScoreValue = new System.Windows.Forms.Label();
             this.ScoreLabel = new System.Windows.Forms.Label();
+            this.ReturnHomeButton = new System.Windows.Forms.Button();
             this.GameBoard.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -250,7 +251,7 @@
             // 
             this.ScoreValue.AutoSize = true;
             this.ScoreValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScoreValue.Location = new System.Drawing.Point(97, 694);
+            this.ScoreValue.Location = new System.Drawing.Point(108, 694);
             this.ScoreValue.Name = "ScoreValue";
             this.ScoreValue.Size = new System.Drawing.Size(23, 25);
             this.ScoreValue.TabIndex = 2;
@@ -260,17 +261,29 @@
             // 
             this.ScoreLabel.AutoSize = true;
             this.ScoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScoreLabel.Location = new System.Drawing.Point(21, 694);
+            this.ScoreLabel.Location = new System.Drawing.Point(32, 694);
             this.ScoreLabel.Name = "ScoreLabel";
             this.ScoreLabel.Size = new System.Drawing.Size(70, 25);
             this.ScoreLabel.TabIndex = 3;
             this.ScoreLabel.Text = "Score:";
             // 
+            // ReturnHomeButton
+            // 
+            this.ReturnHomeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReturnHomeButton.Location = new System.Drawing.Point(532, 677);
+            this.ReturnHomeButton.Name = "ReturnHomeButton";
+            this.ReturnHomeButton.Size = new System.Drawing.Size(103, 56);
+            this.ReturnHomeButton.TabIndex = 4;
+            this.ReturnHomeButton.Text = "Home";
+            this.ReturnHomeButton.UseVisualStyleBackColor = true;
+            this.ReturnHomeButton.Click += new System.EventHandler(this.ReturnHomeButton_Click);
+            // 
             // GameBoard4By4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 759);
+            this.ClientSize = new System.Drawing.Size(659, 761);
+            this.Controls.Add(this.ReturnHomeButton);
             this.Controls.Add(this.ScoreLabel);
             this.Controls.Add(this.ScoreValue);
             this.Controls.Add(this.StartButton);
@@ -305,6 +318,7 @@
         private System.Windows.Forms.Button StartButton;
         private System.Windows.Forms.Label ScoreValue;
         private System.Windows.Forms.Label ScoreLabel;
+        private System.Windows.Forms.Button ReturnHomeButton;
     }
 }
 

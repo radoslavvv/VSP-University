@@ -5,24 +5,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.Control;
 
 namespace VSP_4153_MyProject
 {
     public class GameManager
     {
-        private int gameBlocksCount;
+        private int currentLevelBlocksCount;
         private int gameBlocksShowTime;
         private bool blockSelectionIsEnabled;
         private Form gameBoard;
 
-        public GameManager(Form gameBoard)
+        public GameManager(Form gameBoard, int gameBoardSize)
         {
             this.blockSelectionIsEnabled = false;
+
             this.CurrentLevelBlocks = new List<string>();
             this.SelectedBlocks = new List<string>();
             this.CurrentPlayerScore = 0;
+            this.GameBoardSize = gameBoardSize;
 
-            this.gameBlocksCount = 3;
+            this.currentLevelBlocksCount = 3;
             this.gameBoard = gameBoard;
             this.gameBlocksShowTime = 2000;
         }
@@ -32,6 +35,8 @@ namespace VSP_4153_MyProject
         public List<string> SelectedBlocks { get; private set; }
 
         public int CurrentPlayerScore { get; private set; }
+
+        public int GameBoardSize { get; private set; }
 
         // Updates player score
         public void UpdatePlayerScore(int newScore)
@@ -43,8 +48,9 @@ namespace VSP_4153_MyProject
         // Starts new game
         public void StartGame()
         {
-            this.gameBlocksCount = 3;
+            this.currentLevelBlocksCount = 3;
             this.gameBlocksShowTime = 2000;
+
             this.StartNewRound();
         }
 
@@ -74,7 +80,8 @@ namespace VSP_4153_MyProject
         // Hides colored blocks - make all gray
         public void ClearBlocks()
         {
-            foreach (Control control in this.gameBoard.Controls.Find("GameBoard", true).First().Controls)
+            ControlCollection gameBlocks = this.gameBoard.Controls.Find("GameBoard", true).First().Controls;
+            foreach (Control control in gameBlocks)
             {
                 if (control.Tag.ToString() == "GameBlock")
                 {
@@ -86,18 +93,18 @@ namespace VSP_4153_MyProject
         // Generates random blocks for the current level
         public void GenerateCurrentLevelBlocks()
         {
-            while (this.CurrentLevelBlocks.Count != this.gameBlocksCount)
+            while (this.CurrentLevelBlocks.Count != this.currentLevelBlocksCount)
             {
                 Random randomNumber = new Random();
 
-                int blockRow = randomNumber.Next(1, 5);
-                int blockCol = randomNumber.Next(1, 5);
+                int currentBlockRow = randomNumber.Next(1, this.GameBoardSize + 1);
+                int currentLevelBlockCol = randomNumber.Next(1, this.GameBoardSize + 1);
 
-                string blockName = $"panel{blockRow}{blockCol}";
+                string currentBlockName = $"panel{currentBlockRow}{currentLevelBlockCol}";
 
-                if (!this.CurrentLevelBlocks.Contains(blockName))
+                if (!this.CurrentLevelBlocks.Contains(currentBlockName))
                 {
-                    this.CurrentLevelBlocks.Add(blockName);
+                    this.CurrentLevelBlocks.Add(currentBlockName);
                 }
             }
         }
@@ -105,7 +112,7 @@ namespace VSP_4153_MyProject
         // Shows current level blocks - blue ones
         public void ShowCurrentLevelBlocks()
         {
-            foreach (var block in this.CurrentLevelBlocks)
+            foreach (string block in this.CurrentLevelBlocks)
             {
                 Control currentBlockControl = this.gameBoard.Controls.Find(block, true).FirstOrDefault();
                 if (currentBlockControl != null)
@@ -120,12 +127,12 @@ namespace VSP_4153_MyProject
         {
             if (this.blockSelectionIsEnabled)
             {
-                if (this.SelectedBlocks.Count != this.gameBlocksCount)
+                if (this.SelectedBlocks.Count != this.currentLevelBlocksCount)
                 {
                     clickedGameBlock.BackColor = Color.LightBlue;
                     this.SelectedBlocks.Add(clickedGameBlock.Name);
 
-                    if (this.SelectedBlocks.Count == this.gameBlocksCount)
+                    if (this.SelectedBlocks.Count == this.currentLevelBlocksCount)
                     {
                         this.blockSelectionIsEnabled = false;
 
@@ -144,7 +151,7 @@ namespace VSP_4153_MyProject
                                 UpdatePlayerScore(this.CurrentPlayerScore + 1);
                                 if(this.CurrentPlayerScore % 3 == 0)
                                 {
-                                    this.gameBlocksCount++;
+                                    this.currentLevelBlocksCount++;
 
                                     this.gameBlocksShowTime -= 25;
                                 }

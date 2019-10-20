@@ -16,7 +16,7 @@ namespace VSP_4153_MyProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GameBoard6By6());
+            Application.Run(new MainMenu());
         }
     }
 }
