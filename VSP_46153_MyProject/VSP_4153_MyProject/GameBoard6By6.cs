@@ -10,22 +10,14 @@ using System.Windows.Forms;
 
 namespace VSP_4153_MyProject
 {
-    public partial class GameBoard4By4 : Form
+    public partial class GameBoard6By6 : Form
     {
         private GameManager gameManager;
 
-        public GameBoard4By4()
+        public GameBoard6By6()
         {
             InitializeComponent();
-            this.gameManager = new GameManager(this, 4);
-        }
-
-        private void StartButton_Click(object sender, EventArgs e)
-        {
-            this.gameManager.UpdatePlayerScore(0);
-            StartButton.Visible = false;
-
-            this.gameManager.StartGame();
+            this.gameManager = new GameManager(this, 6);
         }
 
         private void GameBlockClick(object sender, EventArgs e)
@@ -33,6 +25,14 @@ namespace VSP_4153_MyProject
             Control clickedGameBlock = (Control)sender;
 
             this.gameManager.HandleGameBlockClick(clickedGameBlock);
+        }
+
+        private void StartButtonClick(object sender, EventArgs e)
+        {
+            this.gameManager.UpdatePlayerScore(0);
+            StartButton.Visible = false;
+
+            this.gameManager.StartGame();
         }
 
         private void ReturnHomeButton_Click(object sender, EventArgs e)

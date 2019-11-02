@@ -67,8 +67,9 @@
             this.HardModeButton.Name = "HardModeButton";
             this.HardModeButton.Size = new System.Drawing.Size(200, 75);
             this.HardModeButton.TabIndex = 2;
-            this.HardModeButton.Text = "8x8 - Hard";
+            this.HardModeButton.Text = "6x6 - Hard";
             this.HardModeButton.UseVisualStyleBackColor = false;
+            this.HardModeButton.Click += new System.EventHandler(this.HardModeButton_Click);
             // 
             // label1
             // 

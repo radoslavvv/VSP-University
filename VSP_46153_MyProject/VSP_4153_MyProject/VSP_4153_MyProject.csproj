@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameBoard.cs" />
     <Compile Include="GameBoard4By4.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +58,12 @@
     </Compile>
     <Compile Include="GameBoard5By5.Designer.cs">
       <DependentUpon>GameBoard5By5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameBoard6By6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameBoard6By6.Designer.cs">
+      <DependentUpon>GameBoard6By6.cs</DependentUpon>
     </Compile>
     <Compile Include="GameManager.cs" />
     <Compile Include="MainMenu.cs">
@@ -72,6 +79,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GameBoard5By5.resx">
       <DependentUpon>GameBoard5By5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameBoard6By6.resx">
+      <DependentUpon>GameBoard6By6.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>

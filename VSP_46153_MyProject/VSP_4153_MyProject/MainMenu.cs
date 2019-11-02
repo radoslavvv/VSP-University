@@ -19,20 +19,26 @@ namespace VSP_4153_MyProject
 
         private void EasyModeButton_Click(object sender, EventArgs e)
         {
-            //this.Hide();
-            //this.Visible = false;
+            this.Close();
 
             GameBoard4By4 easyBoard = new GameBoard4By4();
-            easyBoard.ShowDialog();
-            this.Close();
+            easyBoard.Show();
         }
 
         private void MediumModeButton_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
+            this.Close();
 
             GameBoard5By5 mediumBoard = new GameBoard5By5();
             mediumBoard.Show();
+        }
+
+        private void HardModeButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+            GameBoard6By6 hardBoard = new GameBoard6By6();
+            hardBoard.Show();
         }
     }
 }

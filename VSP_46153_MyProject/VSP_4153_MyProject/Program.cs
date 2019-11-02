@@ -16,7 +16,8 @@ namespace VSP_4153_MyProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainMenu());
+            new MainMenu().Show();
+            Application.Run();
         }
     }
 }

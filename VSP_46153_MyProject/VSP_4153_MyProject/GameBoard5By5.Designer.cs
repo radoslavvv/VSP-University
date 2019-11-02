@@ -66,10 +66,10 @@
             // ScoreLabel
             // 
             this.ScoreLabel.AutoSize = true;
-            this.ScoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScoreLabel.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ScoreLabel.Location = new System.Drawing.Point(41, 892);
             this.ScoreLabel.Name = "ScoreLabel";
-            this.ScoreLabel.Size = new System.Drawing.Size(70, 25);
+            this.ScoreLabel.Size = new System.Drawing.Size(74, 24);
             this.ScoreLabel.TabIndex = 7;
             this.ScoreLabel.Text = "Score:";
             // 
@@ -155,7 +155,7 @@
             // 
             // StartButton
             // 
-            this.StartButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StartButton.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StartButton.Location = new System.Drawing.Point(222, 878);
             this.StartButton.Name = "StartButton";
             this.StartButton.Size = new System.Drawing.Size(293, 56);
@@ -237,10 +237,10 @@
             // ScoreValue
             // 
             this.ScoreValue.AutoSize = true;
-            this.ScoreValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScoreValue.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ScoreValue.Location = new System.Drawing.Point(117, 892);
             this.ScoreValue.Name = "ScoreValue";
-            this.ScoreValue.Size = new System.Drawing.Size(23, 25);
+            this.ScoreValue.Size = new System.Drawing.Size(24, 24);
             this.ScoreValue.TabIndex = 6;
             this.ScoreValue.Text = "0";
             // 
@@ -379,7 +379,7 @@
             // 
             // ReturnHomeButton
             // 
-            this.ReturnHomeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ReturnHomeButton.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReturnHomeButton.Location = new System.Drawing.Point(571, 878);
             this.ReturnHomeButton.Name = "ReturnHomeButton";
             this.ReturnHomeButton.Size = new System.Drawing.Size(119, 56);
@@ -391,20 +391,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 65F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(175, 9);
+            this.label1.Font = new System.Drawing.Font("Montserrat", 65F);
+            this.label1.Location = new System.Drawing.Point(158, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(419, 98);
+            this.label1.Size = new System.Drawing.Size(460, 106);
             this.label1.TabIndex = 9;
             this.label1.Text = "MEMORy";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(303, 119);
+            this.label2.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label2.Location = new System.Drawing.Point(297, 125);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(131, 25);
+            this.label2.Size = new System.Drawing.Size(148, 24);
             this.label2.TabIndex = 10;
             this.label2.Text = "5x5 - Medium";
             // 
