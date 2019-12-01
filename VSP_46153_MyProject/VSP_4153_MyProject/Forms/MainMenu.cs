@@ -21,7 +21,7 @@ namespace VSP_4153_MyProject
         {
             this.Close();
 
-            GameBoard4By4 easyBoard = new GameBoard4By4();
+            EasyGameBoard easyBoard = new EasyGameBoard();
             easyBoard.Show();
         }
 
@@ -29,7 +29,7 @@ namespace VSP_4153_MyProject
         {
             this.Close();
 
-            GameBoard5By5 mediumBoard = new GameBoard5By5();
+            MediumGameBoard mediumBoard = new MediumGameBoard();
             mediumBoard.Show();
         }
 
@@ -37,7 +37,7 @@ namespace VSP_4153_MyProject
         {
             this.Close();
 
-            GameBoard6By6 hardBoard = new GameBoard6By6();
+            HardGameBoard hardBoard = new HardGameBoard();
             hardBoard.Show();
         }
     }

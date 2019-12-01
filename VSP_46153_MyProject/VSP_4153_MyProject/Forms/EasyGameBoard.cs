@@ -10,20 +10,23 @@ using System.Windows.Forms;
 
 namespace VSP_4153_MyProject
 {
-    public partial class GameBoard4By4 : Form
+    public partial class EasyGameBoard : Form
     {
         private GameManager gameManager;
 
-        public GameBoard4By4()
+        public EasyGameBoard()
         {
             InitializeComponent();
-            this.gameManager = new GameManager(this, 4);
+            this.gameManager = new GameManager(this, Constants.EasyGameBoardSize,
+                Constants.EasyGameBoardStartSpeed, Constants.EasyGameBoardMaxSpeed,
+                Constants.EasyGameBoardSpeedIncrease, Constants.EasyGameBoardMaxBlocksCount);
         }
 
         private void StartButton_Click(object sender, EventArgs e)
         {
-            this.gameManager.UpdatePlayerScore(0);
+            this.gameManager.UpdatePlayerScore();
             StartButton.Visible = false;
+            ReturnHomeButton.Visible = false;
 
             this.gameManager.StartGame();
         }
@@ -41,6 +44,11 @@ namespace VSP_4153_MyProject
 
             MainMenu mainMenu = new MainMenu();
             mainMenu.Show();
+        }
+
+        private void EasyGameBoard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

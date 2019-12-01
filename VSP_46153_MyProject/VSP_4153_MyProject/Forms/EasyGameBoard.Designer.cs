@@ -1,6 +1,6 @@
 ﻿namespace VSP_4153_MyProject
 {
-    partial class GameBoard4By4
+    partial class EasyGameBoard
     {
         /// <summary>
         /// Required designer variable.
@@ -73,17 +73,17 @@
             this.GameBoard.Controls.Add(this.panel13);
             this.GameBoard.Controls.Add(this.panel12);
             this.GameBoard.Controls.Add(this.panel11);
-            this.GameBoard.Location = new System.Drawing.Point(47, 182);
+            this.GameBoard.Location = new System.Drawing.Point(97, 105);
             this.GameBoard.Name = "GameBoard";
-            this.GameBoard.Size = new System.Drawing.Size(650, 650);
+            this.GameBoard.Size = new System.Drawing.Size(437, 436);
             this.GameBoard.TabIndex = 0;
             // 
             // panel44
             // 
             this.panel44.BackColor = System.Drawing.Color.LightGray;
-            this.panel44.Location = new System.Drawing.Point(489, 492);
+            this.panel44.Location = new System.Drawing.Point(331, 331);
             this.panel44.Name = "panel44";
-            this.panel44.Size = new System.Drawing.Size(140, 140);
+            this.panel44.Size = new System.Drawing.Size(95, 95);
             this.panel44.TabIndex = 15;
             this.panel44.Tag = "GameBlock";
             this.panel44.Click += new System.EventHandler(this.GameBlockClick);
@@ -91,9 +91,9 @@
             // panel43
             // 
             this.panel43.BackColor = System.Drawing.Color.LightGray;
-            this.panel43.Location = new System.Drawing.Point(334, 492);
+            this.panel43.Location = new System.Drawing.Point(225, 331);
             this.panel43.Name = "panel43";
-            this.panel43.Size = new System.Drawing.Size(140, 140);
+            this.panel43.Size = new System.Drawing.Size(95, 95);
             this.panel43.TabIndex = 14;
             this.panel43.Tag = "GameBlock";
             this.panel43.Click += new System.EventHandler(this.GameBlockClick);
@@ -101,9 +101,9 @@
             // panel42
             // 
             this.panel42.BackColor = System.Drawing.Color.LightGray;
-            this.panel42.Location = new System.Drawing.Point(177, 492);
+            this.panel42.Location = new System.Drawing.Point(119, 331);
             this.panel42.Name = "panel42";
-            this.panel42.Size = new System.Drawing.Size(140, 140);
+            this.panel42.Size = new System.Drawing.Size(95, 95);
             this.panel42.TabIndex = 13;
             this.panel42.Tag = "GameBlock";
             this.panel42.Click += new System.EventHandler(this.GameBlockClick);
@@ -111,9 +111,9 @@
             // panel41
             // 
             this.panel41.BackColor = System.Drawing.Color.LightGray;
-            this.panel41.Location = new System.Drawing.Point(19, 492);
+            this.panel41.Location = new System.Drawing.Point(13, 331);
             this.panel41.Name = "panel41";
-            this.panel41.Size = new System.Drawing.Size(140, 140);
+            this.panel41.Size = new System.Drawing.Size(95, 95);
             this.panel41.TabIndex = 12;
             this.panel41.Tag = "GameBlock";
             this.panel41.Click += new System.EventHandler(this.GameBlockClick);
@@ -121,9 +121,9 @@
             // panel34
             // 
             this.panel34.BackColor = System.Drawing.Color.LightGray;
-            this.panel34.Location = new System.Drawing.Point(489, 335);
+            this.panel34.Location = new System.Drawing.Point(331, 225);
             this.panel34.Name = "panel34";
-            this.panel34.Size = new System.Drawing.Size(140, 140);
+            this.panel34.Size = new System.Drawing.Size(95, 95);
             this.panel34.TabIndex = 11;
             this.panel34.Tag = "GameBlock";
             this.panel34.Click += new System.EventHandler(this.GameBlockClick);
@@ -131,9 +131,9 @@
             // panel33
             // 
             this.panel33.BackColor = System.Drawing.Color.LightGray;
-            this.panel33.Location = new System.Drawing.Point(334, 335);
+            this.panel33.Location = new System.Drawing.Point(225, 225);
             this.panel33.Name = "panel33";
-            this.panel33.Size = new System.Drawing.Size(140, 140);
+            this.panel33.Size = new System.Drawing.Size(95, 95);
             this.panel33.TabIndex = 10;
             this.panel33.Tag = "GameBlock";
             this.panel33.Click += new System.EventHandler(this.GameBlockClick);
@@ -141,9 +141,9 @@
             // panel32
             // 
             this.panel32.BackColor = System.Drawing.Color.LightGray;
-            this.panel32.Location = new System.Drawing.Point(177, 335);
+            this.panel32.Location = new System.Drawing.Point(119, 225);
             this.panel32.Name = "panel32";
-            this.panel32.Size = new System.Drawing.Size(140, 140);
+            this.panel32.Size = new System.Drawing.Size(95, 95);
             this.panel32.TabIndex = 9;
             this.panel32.Tag = "GameBlock";
             this.panel32.Click += new System.EventHandler(this.GameBlockClick);
@@ -151,9 +151,9 @@
             // panel31
             // 
             this.panel31.BackColor = System.Drawing.Color.LightGray;
-            this.panel31.Location = new System.Drawing.Point(19, 335);
+            this.panel31.Location = new System.Drawing.Point(13, 225);
             this.panel31.Name = "panel31";
-            this.panel31.Size = new System.Drawing.Size(140, 140);
+            this.panel31.Size = new System.Drawing.Size(95, 95);
             this.panel31.TabIndex = 8;
             this.panel31.Tag = "GameBlock";
             this.panel31.Click += new System.EventHandler(this.GameBlockClick);
@@ -161,9 +161,9 @@
             // panel24
             // 
             this.panel24.BackColor = System.Drawing.Color.LightGray;
-            this.panel24.Location = new System.Drawing.Point(489, 179);
+            this.panel24.Location = new System.Drawing.Point(331, 119);
             this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(140, 140);
+            this.panel24.Size = new System.Drawing.Size(95, 95);
             this.panel24.TabIndex = 7;
             this.panel24.Tag = "GameBlock";
             this.panel24.Click += new System.EventHandler(this.GameBlockClick);
@@ -171,9 +171,9 @@
             // panel23
             // 
             this.panel23.BackColor = System.Drawing.Color.LightGray;
-            this.panel23.Location = new System.Drawing.Point(334, 179);
+            this.panel23.Location = new System.Drawing.Point(225, 119);
             this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(140, 140);
+            this.panel23.Size = new System.Drawing.Size(95, 95);
             this.panel23.TabIndex = 6;
             this.panel23.Tag = "GameBlock";
             this.panel23.Click += new System.EventHandler(this.GameBlockClick);
@@ -181,9 +181,9 @@
             // panel22
             // 
             this.panel22.BackColor = System.Drawing.Color.LightGray;
-            this.panel22.Location = new System.Drawing.Point(177, 179);
+            this.panel22.Location = new System.Drawing.Point(119, 119);
             this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(140, 140);
+            this.panel22.Size = new System.Drawing.Size(95, 95);
             this.panel22.TabIndex = 5;
             this.panel22.Tag = "GameBlock";
             this.panel22.Click += new System.EventHandler(this.GameBlockClick);
@@ -191,9 +191,9 @@
             // panel21
             // 
             this.panel21.BackColor = System.Drawing.Color.LightGray;
-            this.panel21.Location = new System.Drawing.Point(19, 179);
+            this.panel21.Location = new System.Drawing.Point(13, 119);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(140, 140);
+            this.panel21.Size = new System.Drawing.Size(95, 95);
             this.panel21.TabIndex = 4;
             this.panel21.Tag = "GameBlock";
             this.panel21.Click += new System.EventHandler(this.GameBlockClick);
@@ -201,9 +201,9 @@
             // panel14
             // 
             this.panel14.BackColor = System.Drawing.Color.LightGray;
-            this.panel14.Location = new System.Drawing.Point(489, 22);
+            this.panel14.Location = new System.Drawing.Point(331, 13);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(140, 140);
+            this.panel14.Size = new System.Drawing.Size(95, 95);
             this.panel14.TabIndex = 3;
             this.panel14.Tag = "GameBlock";
             this.panel14.Click += new System.EventHandler(this.GameBlockClick);
@@ -211,9 +211,9 @@
             // panel13
             // 
             this.panel13.BackColor = System.Drawing.Color.LightGray;
-            this.panel13.Location = new System.Drawing.Point(334, 22);
+            this.panel13.Location = new System.Drawing.Point(225, 13);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(140, 140);
+            this.panel13.Size = new System.Drawing.Size(95, 95);
             this.panel13.TabIndex = 2;
             this.panel13.Tag = "GameBlock";
             this.panel13.Click += new System.EventHandler(this.GameBlockClick);
@@ -221,9 +221,9 @@
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.LightGray;
-            this.panel12.Location = new System.Drawing.Point(177, 22);
+            this.panel12.Location = new System.Drawing.Point(119, 13);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(140, 140);
+            this.panel12.Size = new System.Drawing.Size(95, 95);
             this.panel12.TabIndex = 1;
             this.panel12.Tag = "GameBlock";
             this.panel12.Click += new System.EventHandler(this.GameBlockClick);
@@ -231,9 +231,9 @@
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.LightGray;
-            this.panel11.Location = new System.Drawing.Point(19, 22);
+            this.panel11.Location = new System.Drawing.Point(13, 13);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(140, 140);
+            this.panel11.Size = new System.Drawing.Size(95, 95);
             this.panel11.TabIndex = 0;
             this.panel11.Tag = "GameBlock";
             this.panel11.Click += new System.EventHandler(this.GameBlockClick);
@@ -241,9 +241,9 @@
             // StartButton
             // 
             this.StartButton.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StartButton.Location = new System.Drawing.Point(224, 883);
+            this.StartButton.Location = new System.Drawing.Point(115, 600);
             this.StartButton.Name = "StartButton";
-            this.StartButton.Size = new System.Drawing.Size(297, 56);
+            this.StartButton.Size = new System.Drawing.Size(220, 35);
             this.StartButton.TabIndex = 1;
             this.StartButton.Text = "Start";
             this.StartButton.UseVisualStyleBackColor = true;
@@ -253,7 +253,7 @@
             // 
             this.ScoreValue.AutoSize = true;
             this.ScoreValue.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScoreValue.Location = new System.Drawing.Point(118, 900);
+            this.ScoreValue.Location = new System.Drawing.Point(340, 560);
             this.ScoreValue.Name = "ScoreValue";
             this.ScoreValue.Size = new System.Drawing.Size(24, 24);
             this.ScoreValue.TabIndex = 2;
@@ -263,7 +263,7 @@
             // 
             this.ScoreLabel.AutoSize = true;
             this.ScoreLabel.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ScoreLabel.Location = new System.Drawing.Point(42, 900);
+            this.ScoreLabel.Location = new System.Drawing.Point(255, 560);
             this.ScoreLabel.Name = "ScoreLabel";
             this.ScoreLabel.Size = new System.Drawing.Size(74, 24);
             this.ScoreLabel.TabIndex = 3;
@@ -272,9 +272,9 @@
             // ReturnHomeButton
             // 
             this.ReturnHomeButton.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReturnHomeButton.Location = new System.Drawing.Point(594, 883);
+            this.ReturnHomeButton.Location = new System.Drawing.Point(366, 600);
             this.ReturnHomeButton.Name = "ReturnHomeButton";
-            this.ReturnHomeButton.Size = new System.Drawing.Size(103, 56);
+            this.ReturnHomeButton.Size = new System.Drawing.Size(150, 35);
             this.ReturnHomeButton.TabIndex = 4;
             this.ReturnHomeButton.Text = "Home";
             this.ReturnHomeButton.UseVisualStyleBackColor = true;
@@ -285,7 +285,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Montserrat", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Chartreuse;
-            this.label2.Location = new System.Drawing.Point(318, 132);
+            this.label2.Location = new System.Drawing.Point(255, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 24);
             this.label2.TabIndex = 12;
@@ -294,18 +294,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Montserrat", 65F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(157, 9);
+            this.label1.Font = new System.Drawing.Font("Montserrat", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(191, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(460, 106);
+            this.label1.Size = new System.Drawing.Size(248, 57);
             this.label1.TabIndex = 11;
             this.label1.Text = "MEMORy";
             // 
-            // GameBoard4By4
+            // EasyGameBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 961);
+            this.ClientSize = new System.Drawing.Size(630, 647);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ReturnHomeButton);
@@ -316,8 +316,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "GameBoard4By4";
+            this.Name = "EasyGameBoard";
             this.Text = "4x4 Board";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EasyGameBoard_FormClosed);
             this.GameBoard.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

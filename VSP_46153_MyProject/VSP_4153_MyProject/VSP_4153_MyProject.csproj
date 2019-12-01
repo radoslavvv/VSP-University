@@ -46,44 +46,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameBoard.cs" />
-    <Compile Include="GameBoard4By4.cs">
+    <Compile Include="Constants.cs" />
+    <Compile Include="Forms\EasyGameBoard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GameBoard4By4.Designer.cs">
-      <DependentUpon>GameBoard4By4.cs</DependentUpon>
+    <Compile Include="Forms\EasyGameBoard.Designer.cs">
+      <DependentUpon>EasyGameBoard.cs</DependentUpon>
     </Compile>
-    <Compile Include="GameBoard5By5.cs">
+    <Compile Include="Forms\MediumGameBoard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GameBoard5By5.Designer.cs">
-      <DependentUpon>GameBoard5By5.cs</DependentUpon>
+    <Compile Include="Forms\MediumGameBoard.Designer.cs">
+      <DependentUpon>MediumGameBoard.cs</DependentUpon>
     </Compile>
-    <Compile Include="GameBoard6By6.cs">
+    <Compile Include="Forms\HardGameBoard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GameBoard6By6.Designer.cs">
-      <DependentUpon>GameBoard6By6.cs</DependentUpon>
+    <Compile Include="Forms\HardGameBoard.Designer.cs">
+      <DependentUpon>HardGameBoard.cs</DependentUpon>
     </Compile>
     <Compile Include="GameManager.cs" />
-    <Compile Include="MainMenu.cs">
+    <Compile Include="Forms\MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainMenu.Designer.cs">
+    <Compile Include="Forms\MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GameBoard4By4.resx">
-      <DependentUpon>GameBoard4By4.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\EasyGameBoard.resx">
+      <DependentUpon>EasyGameBoard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GameBoard5By5.resx">
-      <DependentUpon>GameBoard5By5.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\MediumGameBoard.resx">
+      <DependentUpon>MediumGameBoard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GameBoard6By6.resx">
-      <DependentUpon>GameBoard6By6.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\HardGameBoard.resx">
+      <DependentUpon>HardGameBoard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainMenu.resx">
+    <EmbeddedResource Include="Forms\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

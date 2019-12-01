@@ -11,12 +11,17 @@ namespace VSP_4153_MyProject
 {
     public class GameManager
     {
-        private int currentLevelBlocksCount;
-        private int gameBlocksShowTime;
-        private bool blockSelectionIsEnabled;
         private Form gameBoard;
+        private int currentLevelBlocksCount;
+        private int maxBlocksCount;
+        private bool blockSelectionIsEnabled;
 
-        public GameManager(Form gameBoard, int gameBoardSize)
+        private int startSpeed;
+        private int maxSpeed;
+        private int speedIncrease;
+        private int gameBlocksShowTime;
+
+        public GameManager(Form gameBoard, int gameBoardSize, int startSpeed, int maxSpeed, int speedIncrease, int maxBlocksCount)
         {
             this.blockSelectionIsEnabled = false;
 
@@ -25,9 +30,14 @@ namespace VSP_4153_MyProject
             this.CurrentPlayerScore = 0;
             this.GameBoardSize = gameBoardSize;
 
-            this.currentLevelBlocksCount = 3;
+            this.currentLevelBlocksCount = Constants.StartBlocksCount;
             this.gameBoard = gameBoard;
-            this.gameBlocksShowTime = 2000;
+            this.startSpeed = startSpeed;
+            this.maxSpeed = maxSpeed;
+            this.speedIncrease = speedIncrease;
+            this.maxBlocksCount = maxBlocksCount;
+
+            this.gameBlocksShowTime = this.startSpeed;
         }
 
         public List<string> CurrentLevelBlocks { get; private set; }
@@ -39,17 +49,17 @@ namespace VSP_4153_MyProject
         public int GameBoardSize { get; private set; }
 
         // Updates player score
-        public void UpdatePlayerScore(int newScore)
-        {
-            this.CurrentPlayerScore = newScore;
-            this.gameBoard.Controls.Find("ScoreValue", true).First().Text = newScore.ToString();
+        public void UpdatePlayerScore()
+        { 
+            Control scoreBoard = this.gameBoard.Controls.Find("ScoreValue", true).First();
+            scoreBoard.Text = this.CurrentPlayerScore.ToString();
         }
 
         // Starts new game
         public void StartGame()
         {
-            this.currentLevelBlocksCount = 3;
-            this.gameBlocksShowTime = 2000;
+            this.currentLevelBlocksCount = Constants.StartBlocksCount;
+            this.gameBlocksShowTime = this.startSpeed;
 
             this.StartNewRound();
         }
@@ -63,17 +73,18 @@ namespace VSP_4153_MyProject
             this.blockSelectionIsEnabled = false;
 
             this.ClearBlocks();
+            this.UpdatePlayerScore();
 
-            Task.Delay(1000).ContinueWith(t =>
+            Task.Delay(Constants.GeneratingBlocksDelay).ContinueWith(firstTask =>
             {
                 this.GenerateCurrentLevelBlocks();
                 this.ShowCurrentLevelBlocks();
-            });
 
-            Task.Delay(this.gameBlocksShowTime).ContinueWith(t =>
-            {
-                this.ClearBlocks();
-                blockSelectionIsEnabled = true;
+                Task.Delay(this.gameBlocksShowTime).ContinueWith(secondTask =>
+                {
+                    this.ClearBlocks();
+                    blockSelectionIsEnabled = true;
+                });
             });
         }
 
@@ -125,49 +136,51 @@ namespace VSP_4153_MyProject
         // Handles the event of clicking a game block
         public void HandleGameBlockClick(Control clickedGameBlock)
         {
-            if (this.blockSelectionIsEnabled)
+            if (this.blockSelectionIsEnabled && (this.SelectedBlocks.Count != this.currentLevelBlocksCount))
             {
-                if (this.SelectedBlocks.Count != this.currentLevelBlocksCount)
+                clickedGameBlock.BackColor = Color.LightBlue;
+                this.SelectedBlocks.Add(clickedGameBlock.Name);
+
+                if (this.SelectedBlocks.Count == this.currentLevelBlocksCount)
                 {
-                    clickedGameBlock.BackColor = Color.LightBlue;
-                    this.SelectedBlocks.Add(clickedGameBlock.Name);
+                    this.blockSelectionIsEnabled = false;
 
-                    if (this.SelectedBlocks.Count == this.currentLevelBlocksCount)
+                    Task.Delay(Constants.CheckSelectedBoxesDelay).ContinueWith(t =>
                     {
-                        this.blockSelectionIsEnabled = false;
-
-                        Task.Delay(200).ContinueWith(t =>
+                        bool correctBlocksAreSelected = this.CorrectBlocksAreSelected();
+                        if (correctBlocksAreSelected)
                         {
-                            bool correctBlocksAreSelected = this.CorrectBlocksAreSelected();
-                            if (correctBlocksAreSelected)
+                            this.ColorBlocks(this.SelectedBlocks, Color.LightGreen);
+
+                            this.CurrentPlayerScore += 1;
+
+                            if (this.CurrentPlayerScore % Constants.SpeedIncreaseRoundsCount == 0)
                             {
-                                ColorBlocks(this.SelectedBlocks, Color.LightGreen);
+                                this.currentLevelBlocksCount++;
+                                this.currentLevelBlocksCount = Math.Min(this.currentLevelBlocksCount, this.maxBlocksCount);
 
-                                Task.Delay(300).ContinueWith(ts =>
-                                {
-                                    StartNewRound();
-                                });
-
-                                UpdatePlayerScore(this.CurrentPlayerScore + 1);
-                                if(this.CurrentPlayerScore % 3 == 0)
-                                {
-                                    this.currentLevelBlocksCount++;
-
-                                    this.gameBlocksShowTime -= 50;
-                                }
-
+                                this.gameBlocksShowTime -= this.speedIncrease;
+                                this.gameBlocksShowTime = Math.Max(this.gameBlocksShowTime, this.maxSpeed);
                             }
-                            else
+
+                            Task.Delay(Constants.StartNewRoundDelay).ContinueWith(ts =>
                             {
-                                this.ColorBlocks(this.CurrentLevelBlocks, Color.DarkRed);
-                                this.ColorBlocks(this.SelectedBlocks, Color.IndianRed);
+                                this.StartNewRound();
+                            });
+                        }
+                        else
+                        {
+                            this.ColorBlocks(this.CurrentLevelBlocks, Color.DarkRed);
+                            this.ColorBlocks(this.SelectedBlocks, Color.IndianRed);
 
-                                Control startButton = this.gameBoard.Controls.Find("StartButton", true).First();
-                                startButton.Visible = true;
-                                startButton.Text = "New Game";
-                            }
-                        });
-                    }
+                            Control startButton = this.gameBoard.Controls.Find("StartButton", true).First();
+                            startButton.Visible = true;
+                            startButton.Text = "New Game";
+
+                            Control returnHomeButton = this.gameBoard.Controls.Find("ReturnHomeButton", true).First();
+                            returnHomeButton.Visible = true;
+                        }
+                    });
                 }
             }
         }

@@ -10,14 +10,16 @@ using System.Windows.Forms;
 
 namespace VSP_4153_MyProject
 {
-    public partial class GameBoard5By5 : Form
+    public partial class HardGameBoard : Form
     {
         private GameManager gameManager;
 
-        public GameBoard5By5()
+        public HardGameBoard()
         {
             InitializeComponent();
-            this.gameManager = new GameManager(this, 5);
+            this.gameManager = new  GameManager(this, Constants.HardGameBoardSize,
+                Constants.HardGameBoardStartSpeed, Constants.HardGameBoardMaxSpeed,
+                Constants.HardGameBoardSpeedIncrease, Constants.HardGameBoardMaxBlocksCount);
         }
 
         private void GameBlockClick(object sender, EventArgs e)
@@ -29,8 +31,9 @@ namespace VSP_4153_MyProject
 
         private void StartButtonClick(object sender, EventArgs e)
         {
-            this.gameManager.UpdatePlayerScore(0);
+            this.gameManager.UpdatePlayerScore();
             StartButton.Visible = false;
+            ReturnHomeButton.Visible = false;
 
             this.gameManager.StartGame();
         }
