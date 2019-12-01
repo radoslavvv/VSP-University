@@ -7,19 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VSP_4153_MyProject.Forms;
 
 namespace VSP_4153_MyProject
 {
     public partial class MediumGameBoard : Form
     {
         private GameManager gameManager;
+        private LeaderboardManager leaderboardManager;
 
         public MediumGameBoard()
         {
             InitializeComponent();
-            this.gameManager = new GameManager(this, Constants.MediumGameBoardSize,
-                Constants.MediumGameBoardStartSpeed, Constants.MediumGameBoardMaxSpeed,
-                Constants.MediumGameBoardSpeedIncrease, Constants.MediumGameBoardMaxBlocksCount);
+
+            this.leaderboardManager = new LeaderboardManager(Gamemode.Hard);
+            this.gameManager = new GameManager(this, 
+                this.leaderboardManager,
+                Constants.MediumGameBoardSize,
+                Constants.MediumGameBoardStartSpeed, 
+                Constants.MediumGameBoardMaxSpeed,
+                Constants.MediumGameBoardSpeedIncrease, 
+                Constants.MediumGameBoardMaxBlocksCount);
         }
 
         private void GameBlockClick(object sender, EventArgs e)
@@ -40,10 +48,17 @@ namespace VSP_4153_MyProject
 
         private void ReturnHomeButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
+
+            //MainMenu mainMenu = new MainMenu();
+            //mainMenu.Show();
+
+            this.Hide();
 
             MainMenu mainMenu = new MainMenu();
-            mainMenu.Show();
+            mainMenu.ShowDialog();
+
+            this.Close();
         }
     }
 }

@@ -5,12 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VSP_4153_MyProject.Forms;
 using static System.Windows.Forms.Control;
 
 namespace VSP_4153_MyProject
 {
     public class GameManager
     {
+        private LeaderboardManager leaderboardManager;
         private Form gameBoard;
         private int currentLevelBlocksCount;
         private int maxBlocksCount;
@@ -21,10 +23,15 @@ namespace VSP_4153_MyProject
         private int speedIncrease;
         private int gameBlocksShowTime;
 
-        public GameManager(Form gameBoard, int gameBoardSize, int startSpeed, int maxSpeed, int speedIncrease, int maxBlocksCount)
+        public GameManager(Form gameBoard,
+            LeaderboardManager leaderboardManager,
+            int gameBoardSize, int startSpeed,
+            int maxSpeed, int speedIncrease,
+            int maxBlocksCount)
         {
             this.blockSelectionIsEnabled = false;
 
+            this.leaderboardManager = leaderboardManager;
             this.CurrentLevelBlocks = new List<string>();
             this.SelectedBlocks = new List<string>();
             this.CurrentPlayerScore = 0;
@@ -50,7 +57,7 @@ namespace VSP_4153_MyProject
 
         // Updates player score
         public void UpdatePlayerScore()
-        { 
+        {
             Control scoreBoard = this.gameBoard.Controls.Find("ScoreValue", true).First();
             scoreBoard.Text = this.CurrentPlayerScore.ToString();
         }
@@ -179,11 +186,27 @@ namespace VSP_4153_MyProject
 
                             Control returnHomeButton = this.gameBoard.Controls.Find("ReturnHomeButton", true).First();
                             returnHomeButton.Visible = true;
+
+                            this.LeaderboardAction();
                         }
                     });
                 }
             }
         }
+
+        public void LeaderboardAction()
+        {
+            Leaderboard leaderboard = this.leaderboardManager.GetLeaderboard();
+            if (leaderboard.Data.Any(u => u.Score < this.CurrentPlayerScore))
+            {
+                // todo 
+                // dialog show please enter name you are in top 10
+                // if name is entered remove last
+                // add this to the db
+                // if cancel is clicked continue
+            }
+        }
+
 
         // Check if the selected blocks are the correct ones
         public bool CorrectBlocksAreSelected()

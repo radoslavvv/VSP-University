@@ -7,19 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VSP_4153_MyProject.Forms;
 
 namespace VSP_4153_MyProject
 {
     public partial class EasyGameBoard : Form
     {
         private GameManager gameManager;
+        private LeaderboardManager leaderBoardManager;
 
         public EasyGameBoard()
         {
             InitializeComponent();
-            this.gameManager = new GameManager(this, Constants.EasyGameBoardSize,
-                Constants.EasyGameBoardStartSpeed, Constants.EasyGameBoardMaxSpeed,
-                Constants.EasyGameBoardSpeedIncrease, Constants.EasyGameBoardMaxBlocksCount);
+
+            this.leaderBoardManager = new LeaderboardManager(Gamemode.Easy);
+
+            this.gameManager = new GameManager(this, 
+                this.leaderBoardManager,
+                Constants.EasyGameBoardSize,
+                Constants.EasyGameBoardStartSpeed, 
+                Constants.EasyGameBoardMaxSpeed,
+                Constants.EasyGameBoardSpeedIncrease, 
+                Constants.EasyGameBoardMaxBlocksCount);
         }
 
         private void StartButton_Click(object sender, EventArgs e)
@@ -40,10 +49,12 @@ namespace VSP_4153_MyProject
 
         private void ReturnHomeButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
 
             MainMenu mainMenu = new MainMenu();
-            mainMenu.Show();
+            mainMenu.ShowDialog();
+
+            this.Close();
         }
 
         private void EasyGameBoard_FormClosed(object sender, FormClosedEventArgs e)

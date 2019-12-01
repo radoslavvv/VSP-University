@@ -33,11 +33,17 @@
             this.HardModeButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // EasyModeButton
             // 
+            this.EasyModeButton.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.EasyModeButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.EasyModeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.EasyModeButton.CausesValidation = false;
+            this.EasyModeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.EasyModeButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.EasyModeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EasyModeButton.Location = new System.Drawing.Point(220, 189);
             this.EasyModeButton.Name = "EasyModeButton";
@@ -49,7 +55,13 @@
             // 
             // MediumModeButton
             // 
+            this.MediumModeButton.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.MediumModeButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.MediumModeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.MediumModeButton.CausesValidation = false;
+            this.MediumModeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MediumModeButton.FlatAppearance.BorderSize = 0;
+            this.MediumModeButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.MediumModeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MediumModeButton.Location = new System.Drawing.Point(220, 280);
             this.MediumModeButton.Name = "MediumModeButton";
@@ -61,7 +73,13 @@
             // 
             // HardModeButton
             // 
+            this.HardModeButton.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.HardModeButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.HardModeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.HardModeButton.CausesValidation = false;
+            this.HardModeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HardModeButton.FlatAppearance.BorderSize = 0;
+            this.HardModeButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.HardModeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HardModeButton.Location = new System.Drawing.Point(220, 371);
             this.HardModeButton.Name = "HardModeButton";
@@ -91,17 +109,26 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Please select your game mode below:";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel1.Location = new System.Drawing.Point(209, 178);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(221, 280);
+            this.panel1.TabIndex = 5;
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(630, 457);
+            this.ClientSize = new System.Drawing.Size(630, 484);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.HardModeButton);
             this.Controls.Add(this.MediumModeButton);
             this.Controls.Add(this.EasyModeButton);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -119,5 +146,6 @@
         private System.Windows.Forms.Button HardModeButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

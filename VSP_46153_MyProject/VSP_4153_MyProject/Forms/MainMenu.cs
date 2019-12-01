@@ -19,26 +19,49 @@ namespace VSP_4153_MyProject
 
         private void EasyModeButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //EasyGameBoard easyBoard = new EasyGameBoard();
+            //easyBoard.Show();
+            //easyBoard.FormClosing += (obj, args) => { this.Close(); };
+            //this.Hide();
 
-            EasyGameBoard easyBoard = new EasyGameBoard();
-            easyBoard.Show();
+            this.Hide();
+
+            EasyGameBoard easyGameBoard = new EasyGameBoard();
+            easyGameBoard.ShowDialog();
+
+            this.Close();
         }
 
         private void MediumModeButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //MediumGameBoard mediumBoard = new MediumGameBoard();
+            //mediumBoard.Show();
+            //mediumBoard.FormClosing += (obj, args) => { this.Close(); };
+
+            //this.Hide();
+
+            this.Hide();
 
             MediumGameBoard mediumBoard = new MediumGameBoard();
-            mediumBoard.Show();
+            mediumBoard.ShowDialog();
+
+            this.Close();
         }
 
         private void HardModeButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //HardGameBoard hardBoard = new HardGameBoard();
+            //hardBoard.Show();
+            //hardBoard.FormClosing += (obj, args) => { this.Close(); };
+
+            //this.Hide();
+
+            this.Hide();
 
             HardGameBoard hardBoard = new HardGameBoard();
-            hardBoard.Show();
+            hardBoard.ShowDialog();
+
+            this.Close();
         }
     }
 }
