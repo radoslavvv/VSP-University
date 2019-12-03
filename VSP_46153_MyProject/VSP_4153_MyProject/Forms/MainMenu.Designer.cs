@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.leaderboardButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // EasyModeButton
@@ -45,7 +46,7 @@
             this.EasyModeButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.EasyModeButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.EasyModeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EasyModeButton.Location = new System.Drawing.Point(220, 189);
+            this.EasyModeButton.Location = new System.Drawing.Point(198, 189);
             this.EasyModeButton.Name = "EasyModeButton";
             this.EasyModeButton.Size = new System.Drawing.Size(200, 75);
             this.EasyModeButton.TabIndex = 0;
@@ -63,7 +64,7 @@
             this.MediumModeButton.FlatAppearance.BorderSize = 0;
             this.MediumModeButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.MediumModeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MediumModeButton.Location = new System.Drawing.Point(220, 280);
+            this.MediumModeButton.Location = new System.Drawing.Point(198, 280);
             this.MediumModeButton.Name = "MediumModeButton";
             this.MediumModeButton.Size = new System.Drawing.Size(200, 75);
             this.MediumModeButton.TabIndex = 1;
@@ -81,7 +82,7 @@
             this.HardModeButton.FlatAppearance.BorderSize = 0;
             this.HardModeButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.HardModeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HardModeButton.Location = new System.Drawing.Point(220, 371);
+            this.HardModeButton.Location = new System.Drawing.Point(198, 371);
             this.HardModeButton.Name = "HardModeButton";
             this.HardModeButton.Size = new System.Drawing.Size(200, 75);
             this.HardModeButton.TabIndex = 2;
@@ -93,7 +94,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 65.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(123, 30);
+            this.label1.Location = new System.Drawing.Point(101, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(419, 98);
             this.label1.TabIndex = 3;
@@ -103,7 +104,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(184, 141);
+            this.label2.Location = new System.Drawing.Point(162, 141);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(274, 20);
             this.label2.TabIndex = 4;
@@ -112,17 +113,29 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel1.Location = new System.Drawing.Point(209, 178);
+            this.panel1.Location = new System.Drawing.Point(187, 178);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(221, 280);
             this.panel1.TabIndex = 5;
+            // 
+            // leaderboardButton
+            // 
+            this.leaderboardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.leaderboardButton.Location = new System.Drawing.Point(166, 478);
+            this.leaderboardButton.Name = "leaderboardButton";
+            this.leaderboardButton.Size = new System.Drawing.Size(270, 39);
+            this.leaderboardButton.TabIndex = 6;
+            this.leaderboardButton.Text = "Leaderboard";
+            this.leaderboardButton.UseVisualStyleBackColor = true;
+            this.leaderboardButton.Click += new System.EventHandler(this.leaderboardButton_Click);
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(630, 484);
+            this.ClientSize = new System.Drawing.Size(620, 537);
+            this.Controls.Add(this.leaderboardButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.HardModeButton);
@@ -147,5 +160,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button leaderboardButton;
     }
 }

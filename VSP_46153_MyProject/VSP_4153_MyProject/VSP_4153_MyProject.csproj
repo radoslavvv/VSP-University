@@ -82,10 +82,16 @@
     <Compile Include="Forms\GameBoards\EasyGameBoard.Designer.cs">
       <DependentUpon>EasyGameBoard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\LeaderboardPrompt.cs">
+    <Compile Include="Forms\Leaderboard\LeaderboardView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\LeaderboardPrompt.Designer.cs">
+    <Compile Include="Forms\Leaderboard\LeaderboardView.Designer.cs">
+      <DependentUpon>LeaderboardView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Leaderboard\LeaderboardPrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Leaderboard\LeaderboardPrompt.Designer.cs">
       <DependentUpon>LeaderboardPrompt.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Enums\Gamemode.cs" />
@@ -122,10 +128,13 @@
     <EmbeddedResource Include="Forms\GameBoards\HardGameBoard.resx">
       <DependentUpon>HardGameBoard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\LeaderboardPrompt.aa-DJ.resx">
+    <EmbeddedResource Include="Forms\Leaderboard\LeaderboardView.resx">
+      <DependentUpon>LeaderboardView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Leaderboard\LeaderboardPrompt.aa-DJ.resx">
       <DependentUpon>LeaderboardPrompt.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\LeaderboardPrompt.resx">
+    <EmbeddedResource Include="Forms\Leaderboard\LeaderboardPrompt.resx">
       <DependentUpon>LeaderboardPrompt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainMenu.resx">
@@ -160,4 +169,8 @@
     <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
     <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
   </Target>
+  <PropertyGroup>
+    <PreBuildEvent>if exist "$(TargetPath).locked" del "$(TargetPath).locked"
+if exist "$(TargetPath)" if not exist "$(TargetPath).locked" move "$(TargetPath)" "$(TargetPath).locked"</PreBuildEvent>
+  </PropertyGroup>
 </Project>

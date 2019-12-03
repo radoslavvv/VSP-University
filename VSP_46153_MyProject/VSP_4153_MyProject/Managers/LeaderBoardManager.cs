@@ -22,7 +22,8 @@ namespace VSP_4153_MyProject.Forms
         {
             this.firebaseConfig = new FirebaseConfig()
             {
-                
+                AuthSecret = "tRPTcrzjtzXokZvdtiBiz3ipG1iAqWZDdrh4tBqN",
+                BasePath = "https://vsp-memory-leaderboard-7a822.firebaseio.com/",
             };
 
             this.firebaseClient = new FirebaseClient(this.firebaseConfig);

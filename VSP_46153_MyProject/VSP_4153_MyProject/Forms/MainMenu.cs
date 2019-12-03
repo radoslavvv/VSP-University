@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VSP_4153_MyProject.Forms;
 
 namespace VSP_4153_MyProject
 {
@@ -77,6 +78,12 @@ namespace VSP_4153_MyProject
             HardGameBoard hardGameBoard = new HardGameBoard();
             hardGameBoard.Closed += (s, args) => this.Close();
             hardGameBoard.Show();
+        }
+
+        private void leaderboardButton_Click(object sender, EventArgs e)
+        {
+            LeaderboardView leaderboardView = new LeaderboardView();
+            leaderboardView.Show();
         }
     }
 }
