@@ -76,29 +76,35 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
-    <Compile Include="Forms\EasyGameBoard.cs">
+    <Compile Include="Forms\GameBoards\EasyGameBoard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\EasyGameBoard.Designer.cs">
+    <Compile Include="Forms\GameBoards\EasyGameBoard.Designer.cs">
       <DependentUpon>EasyGameBoard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Leaderboard\Gamemode.cs" />
-    <Compile Include="Leaderboard\Leaderboard.cs" />
-    <Compile Include="Leaderboard\LeaderboardData.cs" />
-    <Compile Include="Leaderboard\LeaderBoardManager.cs" />
-    <Compile Include="Forms\MediumGameBoard.cs">
+    <Compile Include="Forms\LeaderboardPrompt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MediumGameBoard.Designer.cs">
+    <Compile Include="Forms\LeaderboardPrompt.Designer.cs">
+      <DependentUpon>LeaderboardPrompt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Enums\Gamemode.cs" />
+    <Compile Include="Models\Leaderboard.cs" />
+    <Compile Include="Models\LeaderboardData.cs" />
+    <Compile Include="Managers\LeaderBoardManager.cs" />
+    <Compile Include="Forms\GameBoards\MediumGameBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GameBoards\MediumGameBoard.Designer.cs">
       <DependentUpon>MediumGameBoard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\HardGameBoard.cs">
+    <Compile Include="Forms\GameBoards\HardGameBoard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\HardGameBoard.Designer.cs">
+    <Compile Include="Forms\GameBoards\HardGameBoard.Designer.cs">
       <DependentUpon>HardGameBoard.cs</DependentUpon>
     </Compile>
-    <Compile Include="GameManager.cs" />
+    <Compile Include="Managers\GameManager.cs" />
     <Compile Include="Forms\MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,14 +113,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\EasyGameBoard.resx">
+    <EmbeddedResource Include="Forms\GameBoards\EasyGameBoard.resx">
       <DependentUpon>EasyGameBoard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MediumGameBoard.resx">
+    <EmbeddedResource Include="Forms\GameBoards\MediumGameBoard.resx">
       <DependentUpon>MediumGameBoard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HardGameBoard.resx">
+    <EmbeddedResource Include="Forms\GameBoards\HardGameBoard.resx">
       <DependentUpon>HardGameBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LeaderboardPrompt.aa-DJ.resx">
+      <DependentUpon>LeaderboardPrompt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LeaderboardPrompt.resx">
+      <DependentUpon>LeaderboardPrompt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>

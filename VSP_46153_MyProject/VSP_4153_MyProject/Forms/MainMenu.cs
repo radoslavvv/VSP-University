@@ -24,12 +24,17 @@ namespace VSP_4153_MyProject
             //easyBoard.FormClosing += (obj, args) => { this.Close(); };
             //this.Hide();
 
+            //this.Hide();
+
+            //EasyGameBoard easyGameBoard = new EasyGameBoard();
+            //easyGameBoard.ShowDialog();
+
+            //this.Close();
+
             this.Hide();
-
             EasyGameBoard easyGameBoard = new EasyGameBoard();
-            easyGameBoard.ShowDialog();
-
-            this.Close();
+            easyGameBoard.Closed += (s, args) => this.Close();
+            easyGameBoard.Show();
         }
 
         private void MediumModeButton_Click(object sender, EventArgs e)
@@ -40,12 +45,17 @@ namespace VSP_4153_MyProject
 
             //this.Hide();
 
+            //this.Hide();
+
+            //MediumGameBoard mediumBoard = new MediumGameBoard();
+            //mediumBoard.ShowDialog();
+
+            //this.Close();
+
             this.Hide();
-
-            MediumGameBoard mediumBoard = new MediumGameBoard();
-            mediumBoard.ShowDialog();
-
-            this.Close();
+            MediumGameBoard mediumGameBoard = new MediumGameBoard();
+            mediumGameBoard.Closed += (s, args) => this.Close();
+            mediumGameBoard.Show();
         }
 
         private void HardModeButton_Click(object sender, EventArgs e)
@@ -56,12 +66,17 @@ namespace VSP_4153_MyProject
 
             //this.Hide();
 
+            //this.Hide();
+
+            //HardGameBoard hardBoard = new HardGameBoard();
+            //hardBoard.ShowDialog();
+
+            //this.Close();
+
             this.Hide();
-
-            HardGameBoard hardBoard = new HardGameBoard();
-            hardBoard.ShowDialog();
-
-            this.Close();
+            HardGameBoard hardGameBoard = new HardGameBoard();
+            hardGameBoard.Closed += (s, args) => this.Close();
+            hardGameBoard.Show();
         }
     }
 }

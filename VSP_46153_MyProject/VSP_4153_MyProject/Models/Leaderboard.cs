@@ -13,6 +13,6 @@ namespace VSP_4153_MyProject.Forms
             this.Data = new List<LeaderboardData>();
         }
 
-        public List<LeaderboardData> Data { get; set; }
+        public List<LeaderboardData> Data { get; private set; }
     }
 }

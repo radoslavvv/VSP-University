@@ -50,11 +50,16 @@ namespace VSP_4153_MyProject
         private void ReturnHomeButton_Click(object sender, EventArgs e)
         {
             this.Hide();
+            MainMenu mainmenu = new MainMenu();
+            mainmenu.Closed += (s, args) => this.Close();
+            mainmenu.Show();
 
-            MainMenu mainMenu = new MainMenu();
-            mainMenu.ShowDialog();
+            //this.Hide();
 
-            this.Close();
+            //MainMenu mainMenu = new MainMenu();
+            //mainMenu.ShowDialog();
+
+            //this.Close();
         }
 
         private void EasyGameBoard_FormClosed(object sender, FormClosedEventArgs e)

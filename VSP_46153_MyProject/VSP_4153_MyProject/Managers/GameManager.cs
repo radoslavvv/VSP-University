@@ -187,23 +187,21 @@ namespace VSP_4153_MyProject
                             Control returnHomeButton = this.gameBoard.Controls.Find("ReturnHomeButton", true).First();
                             returnHomeButton.Visible = true;
 
-                            this.LeaderboardAction();
+                            this.CheckLeaderboard();
                         }
                     });
                 }
             }
         }
 
-        public void LeaderboardAction()
+        // Check if the player score can enter the leaderboard
+        public async void CheckLeaderboard()
         {
-            Leaderboard leaderboard = this.leaderboardManager.GetLeaderboard();
-            if (leaderboard.Data.Any(u => u.Score < this.CurrentPlayerScore))
+            Leaderboard leaderboard = await this.leaderboardManager.GetLeaderboard();
+            if ((leaderboard.Data.Count < 10) || (leaderboard.Data.Count >= 10 && leaderboard.Data.Any(u => u.Score < this.CurrentPlayerScore)))
             {
-                // todo 
-                // dialog show please enter name you are in top 10
-                // if name is entered remove last
-                // add this to the db
-                // if cancel is clicked continue
+                LeaderboardPrompt leaderboardPrompt = new LeaderboardPrompt(this.CurrentPlayerScore, this.leaderboardManager);
+                leaderboardPrompt.ShowDialog();
             }
         }
 

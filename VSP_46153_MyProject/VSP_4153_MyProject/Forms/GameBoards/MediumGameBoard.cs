@@ -11,23 +11,23 @@ using VSP_4153_MyProject.Forms;
 
 namespace VSP_4153_MyProject
 {
-    public partial class HardGameBoard : Form
+    public partial class MediumGameBoard : Form
     {
         private GameManager gameManager;
         private LeaderboardManager leaderboardManager;
 
-        public HardGameBoard()
+        public MediumGameBoard()
         {
             InitializeComponent();
 
-            this.leaderboardManager = new LeaderboardManager(Gamemode.Hard);
-            this.gameManager = new GameManager(this,
+            this.leaderboardManager = new LeaderboardManager(Gamemode.Medium);
+            this.gameManager = new GameManager(this, 
                 this.leaderboardManager,
-                Constants.HardGameBoardSize,
-                Constants.HardGameBoardStartSpeed,
-                Constants.HardGameBoardMaxSpeed,
-                Constants.HardGameBoardSpeedIncrease,
-                Constants.HardGameBoardMaxBlocksCount);
+                Constants.MediumGameBoardSize,
+                Constants.MediumGameBoardStartSpeed, 
+                Constants.MediumGameBoardMaxSpeed,
+                Constants.MediumGameBoardSpeedIncrease, 
+                Constants.MediumGameBoardMaxBlocksCount);
         }
 
         private void GameBlockClick(object sender, EventArgs e)
@@ -53,12 +53,19 @@ namespace VSP_4153_MyProject
             //MainMenu mainMenu = new MainMenu();
             //mainMenu.Show();
 
+
+
+            //this.Hide();
+
+            //MainMenu mainMenu = new MainMenu();
+            //mainMenu.ShowDialog();
+
+            //this.Close();
+
             this.Hide();
-
-            MainMenu mainMenu = new MainMenu();
-            mainMenu.ShowDialog();
-
-            this.Close();
+            MainMenu mainmenu = new MainMenu();
+            mainmenu.Closed += (s, args) => this.Close();
+            mainmenu.Show();
         }
     }
 }
