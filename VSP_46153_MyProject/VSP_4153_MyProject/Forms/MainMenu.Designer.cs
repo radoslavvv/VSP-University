@@ -147,6 +147,7 @@
             this.MinimizeBox = false;
             this.Name = "MainMenu";
             this.Text = "MEMORy";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainMenu_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

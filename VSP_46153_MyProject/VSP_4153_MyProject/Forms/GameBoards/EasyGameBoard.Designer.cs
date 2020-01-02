@@ -318,7 +318,7 @@
             this.MinimizeBox = false;
             this.Name = "EasyGameBoard";
             this.Text = "4x4 Board";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EasyGameBoard_FormClosed);
+            //this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EasyGameBoard_FormClosed);
             this.GameBoard.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

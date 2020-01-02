@@ -67,13 +67,14 @@
             // 
             // easyButton
             // 
+            this.easyButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.easyButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.easyButton.Location = new System.Drawing.Point(419, 80);
             this.easyButton.Name = "easyButton";
             this.easyButton.Size = new System.Drawing.Size(91, 37);
             this.easyButton.TabIndex = 3;
             this.easyButton.Text = "Easy";
-            this.easyButton.UseVisualStyleBackColor = true;
+            this.easyButton.UseVisualStyleBackColor = false;
             this.easyButton.Click += new System.EventHandler(this.easyButton_Click);
             // 
             // mediumButton

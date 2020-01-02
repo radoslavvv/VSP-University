@@ -22,17 +22,49 @@ namespace VSP_4153_MyProject.Forms
         {
             this.firebaseConfig = new FirebaseConfig()
             {
-               
+                AuthSecret = "",
+                BasePath = "",
             };
 
             this.firebaseClient = new FirebaseClient(this.firebaseConfig);
             this.gameMode = gameMode;
         }
 
+        // Retrieves all the records inside the database for the current game mode
+        public async Task<List<LeaderboardData>> GetLeaderboard()
+        {
+            List<LeaderboardData> currentLeaderboardData = new List<LeaderboardData>();
+
+            FirebaseResponse response = await this.firebaseClient.GetAsync($"{this.gameMode.ToString()}/");
+
+            if (response.Body != "null")
+            {
+                JObject jobject = JObject.Parse(response.Body);
+                foreach (var user in jobject)
+                {
+                    string username = user.Key;
+                    JToken userData = user.Value;
+                    DateTime date = DateTime.Parse(userData["Date"].ToString());
+                    int score = int.Parse(userData["Score"].ToString());
+
+                    LeaderboardData currentLeaderBoardData = new LeaderboardData()
+                    {
+                        Username = username,
+                        Date = date,
+                        Score = score
+                    };
+
+                    currentLeaderboardData.Add(currentLeaderBoardData);
+                }
+            }
+
+            return currentLeaderboardData;
+        }
+
         // Adds a new record to the database
         public async Task<LeaderboardData> AddRecord(string username, int score)
         {
-            Leaderboard leaderBoard = await this.GetLeaderboard();
+            // List<LeaderboardData> currentLeaderboardData = await this.GetLeaderboard();
 
             LeaderboardData leaderboardData = new LeaderboardData()
             {
@@ -54,38 +86,6 @@ namespace VSP_4153_MyProject.Forms
             FirebaseResponse response = await this.firebaseClient.DeleteAsync(path);
 
             return response;
-        }
-
-        // Retrieves all the records inside the database for the current mode
-        public async Task<Leaderboard> GetLeaderboard()
-        {
-            Leaderboard currentLeaderboard = new Leaderboard();
-
-            FirebaseResponse response =  await this.firebaseClient.GetAsync($"{this.gameMode.ToString()}/");
-
-            if(response.Body != "null")
-            {
-                JObject jobject = JObject.Parse(response.Body);
-                foreach (var user in jobject)
-                {
-                    string username = user.Key;
-                    JToken userData = user.Value;
-                    DateTime date = DateTime.Parse(userData["Date"].ToString());
-                    int score = int.Parse(userData["Score"].ToString());
-
-                    LeaderboardData currentLeaderBoardData = new LeaderboardData()
-                    {
-                        Username = username,
-                        Date = date,
-                        Score = score
-                    };
-
-                    currentLeaderboard.Data.Add(currentLeaderBoardData);
-                }
-            }
-            
-
-            return currentLeaderboard;
         }
     }
 }

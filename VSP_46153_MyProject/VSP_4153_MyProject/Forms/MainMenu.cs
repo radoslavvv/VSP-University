@@ -18,6 +18,7 @@ namespace VSP_4153_MyProject
             InitializeComponent();
         }
 
+        // When the Easy button is clicked
         private void EasyModeButton_Click(object sender, EventArgs e)
         {
             //EasyGameBoard easyBoard = new EasyGameBoard();
@@ -32,12 +33,14 @@ namespace VSP_4153_MyProject
 
             //this.Close();
 
-            this.Hide();
             EasyGameBoard easyGameBoard = new EasyGameBoard();
-            easyGameBoard.Closed += (s, args) => this.Close();
+            easyGameBoard.Closed += (s, args) => this.ShowForm("MainMenu");
             easyGameBoard.Show();
+            this.Hide();
         }
 
+
+        // When the Medium Button is clicked
         private void MediumModeButton_Click(object sender, EventArgs e)
         {
             //MediumGameBoard mediumBoard = new MediumGameBoard();
@@ -53,12 +56,13 @@ namespace VSP_4153_MyProject
 
             //this.Close();
 
-            this.Hide();
             MediumGameBoard mediumGameBoard = new MediumGameBoard();
-            mediumGameBoard.Closed += (s, args) => this.Close();
+            mediumGameBoard.Closed += (s, args) => this.ShowForm("MainMenu");
             mediumGameBoard.Show();
+            this.Hide();
         }
 
+        // When the Hard button is clicked
         private void HardModeButton_Click(object sender, EventArgs e)
         {
             //HardGameBoard hardBoard = new HardGameBoard();
@@ -74,16 +78,35 @@ namespace VSP_4153_MyProject
 
             //this.Close();
 
-            this.Hide();
             HardGameBoard hardGameBoard = new HardGameBoard();
-            hardGameBoard.Closed += (s, args) => this.Close();
+            hardGameBoard.Closed += (s, args) => this.ShowForm("MainMenu");
             hardGameBoard.Show();
+            this.Hide();
         }
 
+        // When the Leaderboard button is clicked
         private void leaderboardButton_Click(object sender, EventArgs e)
         {
             LeaderboardView leaderboardView = new LeaderboardView();
             leaderboardView.Show();
+        }
+
+        private void MainMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
+            Application.Exit();
+        }
+
+        private void ShowForm(string formName)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                string currentFormName = form.Name;
+                if(currentFormName == formName)
+                {
+                    form.Show();
+                }
+            }
         }
     }
 }

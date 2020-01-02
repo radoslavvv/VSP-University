@@ -12,8 +12,8 @@ namespace VSP_4153_MyProject.Forms
 {
     public partial class LeaderboardPrompt : Form
     {
-        private LeaderboardManager leaderboardManager;
         private int playerScore;
+        private LeaderboardManager leaderboardManager;
 
         public LeaderboardPrompt(int playerScore, LeaderboardManager leaderboardManager)
         {
@@ -26,9 +26,10 @@ namespace VSP_4153_MyProject.Forms
             errorMessage.Visible = false;
         }
 
+        // When the Enter button is clicked
         private async void enterButton_Click(object sender, EventArgs e)
         {
-            Leaderboard leaderboard = await this.leaderboardManager.GetLeaderboard();
+            List<LeaderboardData> leaderboardData = await this.leaderboardManager.GetLeaderboard();
 
             if (nicknameTextBox.Text.Length == 0 || string.IsNullOrEmpty(nicknameTextBox.Text))
             {
@@ -37,24 +38,24 @@ namespace VSP_4153_MyProject.Forms
             }
             else
             {
-                string nickname = nicknameTextBox.Text;
+                string username = nicknameTextBox.Text;
 
-                if (leaderboard.Data.Any(r => r.Username == nickname))
+                if (leaderboardData.Any(r => r.Username == username))
                 {
                     errorMessage.Text = "This username is already taken! Please use another!";
                     errorMessage.Visible = true;
                 }
                 else
                 {
-                    if(leaderboard.Data.Count < 10)
+                    if(leaderboardData.Count < 10)
                     {
-                        await this.leaderboardManager.AddRecord(nickname, this.playerScore);
+                        await this.leaderboardManager.AddRecord(username, this.playerScore);
                     }
                     else
                     {
-                        LeaderboardData lastPlace = leaderboard.Data.OrderByDescending(l => l.Score).Last();
+                        LeaderboardData lastPlace = leaderboardData.OrderByDescending(l => l.Score).Last();
                         await this.leaderboardManager.RemoveRecord(lastPlace);
-                        await this.leaderboardManager.AddRecord(nickname, this.playerScore);
+                        await this.leaderboardManager.AddRecord(username, this.playerScore);
                     }
 
                     this.Close();
@@ -62,6 +63,7 @@ namespace VSP_4153_MyProject.Forms
             }
         }
 
+        // When the cancel button is clicked
         private void cancelButton_Clicked(object sender, EventArgs e)
         {
             this.Close();

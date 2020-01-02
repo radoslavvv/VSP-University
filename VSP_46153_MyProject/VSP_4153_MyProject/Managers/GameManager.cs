@@ -55,14 +55,8 @@ namespace VSP_4153_MyProject
 
         public int GameBoardSize { get; private set; }
 
-        // Updates player score
-        public void UpdatePlayerScore()
-        {
-            Control scoreBoard = this.gameBoard.Controls.Find("ScoreValue", true).First();
-            scoreBoard.Text = this.CurrentPlayerScore.ToString();
-        }
 
-        // Starts new game
+        // Starts a new game
         public void StartGame()
         {
             this.currentLevelBlocksCount = Constants.StartBlocksCount;
@@ -71,7 +65,7 @@ namespace VSP_4153_MyProject
             this.StartNewRound();
         }
 
-        // Start new round of the game
+        // Starts a new round of the game
         public void StartNewRound()
         {
             this.SelectedBlocks = new List<string>();
@@ -95,17 +89,26 @@ namespace VSP_4153_MyProject
             });
         }
 
-        // Hides colored blocks - make all gray
+
+        // Hides colored blocks - make all blocks in gray coloring
         public void ClearBlocks()
         {
-            ControlCollection gameBlocks = this.gameBoard.Controls.Find("GameBoard", true).First().Controls;
-            foreach (Control control in gameBlocks)
+            ControlCollection gameBoardControls = this.gameBoard.Controls.Find("GameBoard", true).First().Controls;
+            foreach (Control control in gameBoardControls)
             {
-                if (control.Tag.ToString() == "GameBlock")
+                string controlTag = control.Tag.ToString();
+                if (controlTag == "GameBlock")
                 {
                     control.BackColor = Color.LightGray;
                 }
             }
+        }
+
+        // Updates player score displayed on the screen
+        public void UpdatePlayerScore()
+        {
+            Control scoreBoard = this.gameBoard.Controls.Find("ScoreValue", true).First();
+            scoreBoard.Text = this.CurrentPlayerScore.ToString();
         }
 
         // Generates random blocks for the current level
@@ -143,7 +146,7 @@ namespace VSP_4153_MyProject
         // Handles the event of clicking a game block
         public void HandleGameBlockClick(Control clickedGameBlock)
         {
-            if (this.blockSelectionIsEnabled && (this.SelectedBlocks.Count != this.currentLevelBlocksCount))
+            if (this.blockSelectionIsEnabled && (this.SelectedBlocks.Count != this.currentLevelBlocksCount) && !this.SelectedBlocks.Contains(clickedGameBlock.Name))
             {
                 clickedGameBlock.BackColor = Color.LightBlue;
                 this.SelectedBlocks.Add(clickedGameBlock.Name);
@@ -157,54 +160,16 @@ namespace VSP_4153_MyProject
                         bool correctBlocksAreSelected = this.CorrectBlocksAreSelected();
                         if (correctBlocksAreSelected)
                         {
-                            this.ColorBlocks(this.SelectedBlocks, Color.LightGreen);
-
-                            this.CurrentPlayerScore += 1;
-
-                            if (this.CurrentPlayerScore % Constants.SpeedIncreaseRoundsCount == 0)
-                            {
-                                this.currentLevelBlocksCount++;
-                                this.currentLevelBlocksCount = Math.Min(this.currentLevelBlocksCount, this.maxBlocksCount);
-
-                                this.gameBlocksShowTime -= this.speedIncrease;
-                                this.gameBlocksShowTime = Math.Max(this.gameBlocksShowTime, this.maxSpeed);
-                            }
-
-                            Task.Delay(Constants.StartNewRoundDelay).ContinueWith(ts =>
-                            {
-                                this.StartNewRound();
-                            });
+                            CorrectBlocksSelectedHandler();
                         }
                         else
                         {
-                            this.ColorBlocks(this.CurrentLevelBlocks, Color.DarkRed);
-                            this.ColorBlocks(this.SelectedBlocks, Color.IndianRed);
-
-                            Control startButton = this.gameBoard.Controls.Find("StartButton", true).First();
-                            startButton.Visible = true;
-                            startButton.Text = "New Game";
-
-                            Control returnHomeButton = this.gameBoard.Controls.Find("ReturnHomeButton", true).First();
-                            returnHomeButton.Visible = true;
-
-                            this.CheckLeaderboard();
+                            WrongBlocksSelectedHandler();
                         }
                     });
                 }
             }
         }
-
-        // Check if the player score can enter the leaderboard
-        public async void CheckLeaderboard()
-        {
-            Leaderboard leaderboard = await this.leaderboardManager.GetLeaderboard();
-            if ((leaderboard.Data.Count < 10) || (leaderboard.Data.Count >= 10 && leaderboard.Data.Any(u => u.Score < this.CurrentPlayerScore)))
-            {
-                LeaderboardPrompt leaderboardPrompt = new LeaderboardPrompt(this.CurrentPlayerScore, this.leaderboardManager);
-                leaderboardPrompt.ShowDialog();
-            }
-        }
-
 
         // Check if the selected blocks are the correct ones
         public bool CorrectBlocksAreSelected()
@@ -222,6 +187,44 @@ namespace VSP_4153_MyProject
             return correctBlocksSelected;
         }
 
+        // Handles the situation when the correct blocks are selected
+        public void CorrectBlocksSelectedHandler()
+        {
+            this.ColorBlocks(this.SelectedBlocks, Color.LightGreen);
+
+            this.CurrentPlayerScore += 1;
+
+            if (this.CurrentPlayerScore % Constants.SpeedIncreaseRoundsCount == 0)
+            {
+                this.currentLevelBlocksCount++;
+                this.currentLevelBlocksCount = Math.Min(this.currentLevelBlocksCount, this.maxBlocksCount);
+
+                this.gameBlocksShowTime -= this.speedIncrease;
+                this.gameBlocksShowTime = Math.Max(this.gameBlocksShowTime, this.maxSpeed);
+            }
+
+            Task.Delay(Constants.StartNewRoundDelay).ContinueWith(ts =>
+            {
+                this.StartNewRound();
+            });
+        }
+
+        // Handles the situation when the wrong blocks are selected
+        private void WrongBlocksSelectedHandler()
+        {
+            this.ColorBlocks(this.CurrentLevelBlocks, Color.DarkRed);
+            this.ColorBlocks(this.SelectedBlocks, Color.IndianRed);
+
+            Control startButton = this.gameBoard.Controls.Find("StartButton", true).First();
+            startButton.Visible = true;
+            startButton.Text = "New Game";
+
+            Control returnHomeButton = this.gameBoard.Controls.Find("ReturnHomeButton", true).First();
+            returnHomeButton.Visible = true;
+
+            this.CheckLeaderboard();
+        }
+
         // Colors the passed blocks with the passed color
         public void ColorBlocks(List<string> blocks, Color color)
         {
@@ -232,6 +235,17 @@ namespace VSP_4153_MyProject
                 {
                     currentBlockControl.BackColor = color;
                 }
+            }
+        }
+
+        // Check if the player score can enter the leaderboard
+        public async void CheckLeaderboard()
+        {
+            List<LeaderboardData> leaderboardData = await this.leaderboardManager.GetLeaderboard();
+            if ((leaderboardData.Count < 10) || (leaderboardData.Count >= 10 && leaderboardData.Any(u => u.Score < this.CurrentPlayerScore)))
+            {
+                LeaderboardPrompt leaderboardPrompt = new LeaderboardPrompt(this.CurrentPlayerScore, this.leaderboardManager);
+                leaderboardPrompt.ShowDialog();
             }
         }
     }

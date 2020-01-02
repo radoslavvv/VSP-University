@@ -19,41 +19,58 @@ namespace VSP_4153_MyProject.Forms
             InitializeComponent();
         }
 
+        // When the form loads
         private void LeaderboardView_Load(object sender, EventArgs e)
         {
             this.easyButton.PerformClick();
         }
 
+        // When the Easy button is clicked
         private async void easyButton_Click(object sender, EventArgs e)
         {
+            this.easyButton.BackColor = SystemColors.AppWorkspace;
+            this.mediumButton.BackColor = SystemColors.Control;
+            this.hardButton.BackColor = SystemColors.Control;
+
             this.leaderboardManager = new LeaderboardManager(Gamemode.Easy);
 
-            Leaderboard leaderboard = await this.leaderboardManager.GetLeaderboard();
-            this.FillListView(leaderboard);
+            List<LeaderboardData> leaderboardData = await this.leaderboardManager.GetLeaderboard();
+            this.FillListView(leaderboardData);
         }
 
+        // When the Medium button is clicked
         private async void mediumButton_Click(object sender, EventArgs e)
         {
+            this.easyButton.BackColor = SystemColors.Control;
+            this.mediumButton.BackColor = SystemColors.AppWorkspace;
+            this.hardButton.BackColor = SystemColors.Control;
+
             this.leaderboardManager = new LeaderboardManager(Gamemode.Medium);
 
-            Leaderboard leaderboard = await this.leaderboardManager.GetLeaderboard();
-            this.FillListView(leaderboard);
+            List< LeaderboardData> leaderboardData = await this.leaderboardManager.GetLeaderboard();
+            this.FillListView(leaderboardData);
         }
 
+        // When the Hard button is clicked
         private async void hardButton_Click(object sender, EventArgs e)
         {
+            this.easyButton.BackColor = SystemColors.Control;
+            this.mediumButton.BackColor = SystemColors.Control;
+            this.hardButton.BackColor = SystemColors.AppWorkspace;
+
             this.leaderboardManager = new LeaderboardManager(Gamemode.Hard);
 
-            Leaderboard leaderboard = await this.leaderboardManager.GetLeaderboard();
-            this.FillListView(leaderboard);
+            List< LeaderboardData> leaderboardData = await this.leaderboardManager.GetLeaderboard();
+            this.FillListView(leaderboardData);
         }
 
-        private void FillListView(Leaderboard leaderboard)
+        // Fills the list view component with the leaderboard data
+        private void FillListView(List<LeaderboardData> leaderboard)
         {
             this.leaderboardListView.Items.Clear();
 
             int counter = 1;
-            foreach (var record in leaderboard.Data.OrderByDescending(l => l.Score))
+            foreach (var record in leaderboard.OrderByDescending(l => l.Score))
             {
                 string rank = counter < 10 ? "0" + counter : counter.ToString();
 
@@ -67,7 +84,5 @@ namespace VSP_4153_MyProject.Forms
                 counter++;
             }
         }
-
-       
     }
 }

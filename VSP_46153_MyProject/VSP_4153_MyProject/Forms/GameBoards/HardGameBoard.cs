@@ -30,6 +30,7 @@ namespace VSP_4153_MyProject
                 Constants.HardGameBoardMaxBlocksCount);
         }
 
+        // When a Game Block is clicked
         private void GameBlockClick(object sender, EventArgs e)
         {
             Control clickedGameBlock = (Control)sender;
@@ -37,6 +38,7 @@ namespace VSP_4153_MyProject
             this.gameManager.HandleGameBlockClick(clickedGameBlock);
         }
 
+        // When the Start Button is clicked
         private void StartButtonClick(object sender, EventArgs e)
         {
             this.gameManager.UpdatePlayerScore();
@@ -46,6 +48,7 @@ namespace VSP_4153_MyProject
             this.gameManager.StartGame();
         }
 
+        // When the Return Home Button is clicked
         private void ReturnHomeButton_Click(object sender, EventArgs e)
         {
             //this.Close();
@@ -62,10 +65,10 @@ namespace VSP_4153_MyProject
 
             //this.Close();
 
-            this.Hide();
-            MainMenu mainmenu = new MainMenu();
-            mainmenu.Closed += (s, args) => this.Close();
-            mainmenu.Show();
+            this.Close();
+            //MainMenu mainmenu = new MainMenu();
+            //mainmenu.Closed += (s, args) => this.Close();
+            //mainmenu.Show();
         }
     }
 }

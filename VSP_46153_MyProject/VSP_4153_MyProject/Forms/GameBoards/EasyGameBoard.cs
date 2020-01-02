@@ -31,6 +31,7 @@ namespace VSP_4153_MyProject
                 Constants.EasyGameBoardMaxBlocksCount);
         }
 
+        // When the Start button is clicked
         private void StartButton_Click(object sender, EventArgs e)
         {
             this.gameManager.UpdatePlayerScore();
@@ -40,6 +41,7 @@ namespace VSP_4153_MyProject
             this.gameManager.StartGame();
         }
 
+        // When a game block is clicked
         private void GameBlockClick(object sender, EventArgs e)
         {
             Control clickedGameBlock = (Control)sender;
@@ -47,12 +49,13 @@ namespace VSP_4153_MyProject
             this.gameManager.HandleGameBlockClick(clickedGameBlock);
         }
 
+        // When the Return Home button is clicked
         private void ReturnHomeButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            MainMenu mainmenu = new MainMenu();
-            mainmenu.Closed += (s, args) => this.Close();
-            mainmenu.Show();
+            this.Close();
+            //MainMenu mainmenu = new MainMenu();
+            //mainmenu.Closed += (s, args) => this.Close();
+            //mainmenu.Show();
 
             //this.Hide();
 
@@ -61,10 +64,11 @@ namespace VSP_4153_MyProject
 
             //this.Close();
         }
-
-        private void EasyGameBoard_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
+        
+        //// When the form closes
+        //private void EasyGameBoard_FormClosed(object sender, FormClosedEventArgs e)
+        //{
+        //    Application.Exit();
+        //}
     }
 }
