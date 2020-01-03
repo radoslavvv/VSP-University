@@ -23,8 +23,8 @@ namespace VSP_4153_MyProject.Forms
             // Configure the firebase configuration for the firesharp plugin
             this.firebaseConfig = new FirebaseConfig()
             {
-                AuthSecret = "biDqRu7XIL1v3Fl9vTZxRBWQwg4LJot1TMih1wj4",
-                BasePath = "https://vsp-memory-leaderboard-7a822.firebaseio.com/",
+                AuthSecret = "",
+                BasePath = "",
             };
 
             // Create a new firebase client with the firebase configuration
