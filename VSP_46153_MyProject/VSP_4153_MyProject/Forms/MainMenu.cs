@@ -21,73 +21,58 @@ namespace VSP_4153_MyProject
         // When the Easy button is clicked
         private void EasyModeButton_Click(object sender, EventArgs e)
         {
-            //EasyGameBoard easyBoard = new EasyGameBoard();
-            //easyBoard.Show();
-            //easyBoard.FormClosing += (obj, args) => { this.Close(); };
-            //this.Hide();
-
-            //this.Hide();
-
-            //EasyGameBoard easyGameBoard = new EasyGameBoard();
-            //easyGameBoard.ShowDialog();
-
-            //this.Close();
-
+            // Create easy game board form
             EasyGameBoard easyGameBoard = new EasyGameBoard();
+
+            // When the easy form is closed show the main menu form
             easyGameBoard.Closed += (s, args) => this.ShowForm("MainMenu");
+            
+            // Show the easy board form
             easyGameBoard.Show();
+
+            // Hide the main menu form
             this.Hide();
         }
-
 
         // When the Medium Button is clicked
         private void MediumModeButton_Click(object sender, EventArgs e)
         {
-            //MediumGameBoard mediumBoard = new MediumGameBoard();
-            //mediumBoard.Show();
-            //mediumBoard.FormClosing += (obj, args) => { this.Close(); };
-
-            //this.Hide();
-
-            //this.Hide();
-
-            //MediumGameBoard mediumBoard = new MediumGameBoard();
-            //mediumBoard.ShowDialog();
-
-            //this.Close();
-
+            // Create Medium game board form
             MediumGameBoard mediumGameBoard = new MediumGameBoard();
+
+            // When the medium board is closed show the main menu form
             mediumGameBoard.Closed += (s, args) => this.ShowForm("MainMenu");
+
+            // Show the medium board form
             mediumGameBoard.Show();
+
+            // Hide the main menu form
             this.Hide();
         }
 
         // When the Hard button is clicked
         private void HardModeButton_Click(object sender, EventArgs e)
         {
-            //HardGameBoard hardBoard = new HardGameBoard();
-            //hardBoard.Show();
-            //hardBoard.FormClosing += (obj, args) => { this.Close(); };
-
-            //this.Hide();
-
-            //this.Hide();
-
-            //HardGameBoard hardBoard = new HardGameBoard();
-            //hardBoard.ShowDialog();
-
-            //this.Close();
-
+            // Create Hard game board form
             HardGameBoard hardGameBoard = new HardGameBoard();
+
+            // When the Hard board is closed show the main menu form
             hardGameBoard.Closed += (s, args) => this.ShowForm("MainMenu");
+
+            // Show the Hard board form
             hardGameBoard.Show();
+
+            // Hide the main menu form
             this.Hide();
         }
 
         // When the Leaderboard button is clicked
         private void leaderboardButton_Click(object sender, EventArgs e)
         {
+            // Create new leaderboard form view
             LeaderboardView leaderboardView = new LeaderboardView();
+
+            // Show the form
             leaderboardView.Show();
         }
 
@@ -97,13 +82,19 @@ namespace VSP_4153_MyProject
             Application.Exit();
         }
 
+        // Show the form with the passed form name
         private void ShowForm(string formName)
         {
+            // Go through all open forms in the application
             foreach (Form form in Application.OpenForms)
             {
+                // Get the current form name
                 string currentFormName = form.Name;
+
+                // If the current form name is equal to the passed one 
                 if(currentFormName == formName)
                 {
+                    // Show the form
                     form.Show();
                 }
             }

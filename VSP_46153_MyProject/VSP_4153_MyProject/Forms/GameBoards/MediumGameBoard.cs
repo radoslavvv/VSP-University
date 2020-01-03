@@ -33,42 +33,32 @@ namespace VSP_4153_MyProject
         // When a Game Block is clicked
         private void GameBlockClick(object sender, EventArgs e)
         {
+            // Get clicked game block
             Control clickedGameBlock = (Control)sender;
 
+            // Handle game block click
             this.gameManager.HandleGameBlockClick(clickedGameBlock);
         }
 
         // When the Start Button is clicked
         private void StartButtonClick(object sender, EventArgs e)
         {
+            // Update player's score
             this.gameManager.UpdatePlayerScore();
+
+            // Hide Start and Return Home buttons
             StartButton.Visible = false;
             ReturnHomeButton.Visible = false;
 
+            // Start a new game
             this.gameManager.StartGame();
         }
 
         // When the Return Home button is clicked
         private void ReturnHomeButton_Click(object sender, EventArgs e)
         {
-            //this.Close();
-
-            //MainMenu mainMenu = new MainMenu();
-            //mainMenu.Show();
-
-
-
-            //this.Hide();
-
-            //MainMenu mainMenu = new MainMenu();
-            //mainMenu.ShowDialog();
-
-            //this.Close();
-
+            // Close the form
             this.Close();
-            //MainMenu mainmenu = new MainMenu();
-            //mainmenu.Closed += (s, args) => this.Close();
-            //mainmenu.Show();
         }
     }
 }
