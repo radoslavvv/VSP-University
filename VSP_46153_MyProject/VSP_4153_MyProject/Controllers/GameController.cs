@@ -10,9 +10,9 @@ using static System.Windows.Forms.Control;
 
 namespace VSP_4153_MyProject
 {
-    public class GameManager
+    public class GameController
     {
-        private LeaderboardManager leaderboardManager;
+        private LeaderboardController leaderboardManager;
         private Form gameBoard;
         private int requredCurrentLevelBlocks;
         private int maxBlocksCount;
@@ -23,8 +23,8 @@ namespace VSP_4153_MyProject
         private int speedIncrease;
         private int gameBlocksShowTime;
 
-        public GameManager(Form gameBoard,
-            LeaderboardManager leaderboardManager,
+        public GameController(Form gameBoard,
+            LeaderboardController leaderboardManager,
             int gameBoardSize, int startSpeed,
             int maxSpeed, int speedIncrease,
             int maxBlocksCount)
@@ -68,6 +68,9 @@ namespace VSP_4153_MyProject
         // Starts a new game
         public void StartGame()
         {
+            // Set the player score to 0
+            this.CurrentPlayerScore = 0;
+
             // Set the initial blocks count 
             this.requredCurrentLevelBlocks = Constants.StartBlocksCount;
 

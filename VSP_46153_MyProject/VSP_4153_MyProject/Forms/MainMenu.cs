@@ -26,7 +26,7 @@ namespace VSP_4153_MyProject
 
             // When the easy form is closed show the main menu form
             easyGameBoard.Closed += (s, args) => this.ShowForm("MainMenu");
-            
+
             // Show the easy board form
             easyGameBoard.Show();
 
@@ -92,7 +92,7 @@ namespace VSP_4153_MyProject
                 string currentFormName = form.Name;
 
                 // If the current form name is equal to the passed one 
-                if(currentFormName == formName)
+                if (currentFormName == formName)
                 {
                     // Show the form
                     form.Show();

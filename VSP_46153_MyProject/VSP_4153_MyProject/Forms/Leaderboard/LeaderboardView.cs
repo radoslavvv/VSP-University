@@ -12,7 +12,7 @@ namespace VSP_4153_MyProject.Forms
 {
     public partial class LeaderboardView : Form
     {
-        private LeaderboardManager leaderboardManager;
+        private LeaderboardController leaderboardManager;
 
         public LeaderboardView()
         {
@@ -42,7 +42,7 @@ namespace VSP_4153_MyProject.Forms
 
         // When the Medium button is clicked
         private void mediumButton_Click(object sender, EventArgs e)
-        { 
+        {
             // Change the color of the Medium button to Dark Gray
             this.mediumButton.BackColor = SystemColors.AppWorkspace;
 
@@ -72,7 +72,7 @@ namespace VSP_4153_MyProject.Forms
         private async void FillListView(Gamemode currentGameMode)
         {
             // Creates the leaderboard manager for the passed gamemode
-            this.leaderboardManager = new LeaderboardManager(currentGameMode);
+            this.leaderboardManager = new LeaderboardController(currentGameMode);
 
             // Clear the leaderboard view of any items
             this.leaderboardListView.Items.Clear();
@@ -88,7 +88,7 @@ namespace VSP_4153_MyProject.Forms
                 string rank = counter < 10 ? "0" + counter : counter.ToString();
 
                 // Form the rank row
-                string result = $@"      {rank}.         {record.Username} - {record.Score}";
+                string result = $@"      {rank}.         {record.Username} - {record.Score} pt.";
 
                 // Create list view item with the formated result
                 ListViewItem listViewItem = new ListViewItem(result);

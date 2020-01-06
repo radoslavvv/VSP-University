@@ -13,15 +13,15 @@ namespace VSP_4153_MyProject
 {
     public partial class MediumGameBoard : Form
     {
-        private GameManager gameManager;
-        private LeaderboardManager leaderboardManager;
+        private GameController gameManager;
+        private LeaderboardController leaderboardManager;
 
         public MediumGameBoard()
         {
             InitializeComponent();
 
-            this.leaderboardManager = new LeaderboardManager(Gamemode.Medium);
-            this.gameManager = new GameManager(this, 
+            this.leaderboardManager = new LeaderboardController(Gamemode.Medium);
+            this.gameManager = new GameController(this, 
                 this.leaderboardManager,
                 Constants.MediumGameBoardSize,
                 Constants.MediumGameBoardStartSpeed, 

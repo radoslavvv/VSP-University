@@ -13,16 +13,16 @@ namespace VSP_4153_MyProject
 {
     public partial class EasyGameBoard : Form
     {
-        private GameManager gameManager;
-        private LeaderboardManager leaderBoardManager;
+        private GameController gameManager;
+        private LeaderboardController leaderBoardManager;
 
         public EasyGameBoard()
         {
             InitializeComponent();
 
-            this.leaderBoardManager = new LeaderboardManager(Gamemode.Easy);
+            this.leaderBoardManager = new LeaderboardController(Gamemode.Easy);
 
-            this.gameManager = new GameManager(this, 
+            this.gameManager = new GameController(this, 
                 this.leaderBoardManager,
                 Constants.EasyGameBoardSize,
                 Constants.EasyGameBoardStartSpeed, 

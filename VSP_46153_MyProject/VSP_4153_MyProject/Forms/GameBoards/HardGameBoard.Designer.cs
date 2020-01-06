@@ -553,6 +553,7 @@
             this.Controls.Add(this.ScoreValue);
             this.Controls.Add(this.ScoreLabel);
             this.Controls.Add(this.GameBoard);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "HardGameBoard";
             this.Text = "6 x 6 - Hard Mode";
             this.GameBoard.ResumeLayout(false);

@@ -12,19 +12,19 @@ using System.Threading.Tasks;
 
 namespace VSP_4153_MyProject.Forms
 {
-    public class LeaderboardManager
+    public class LeaderboardController
     {
         private IFirebaseConfig firebaseConfig;
         private IFirebaseClient firebaseClient;
         private Gamemode gameMode;
 
-        public LeaderboardManager(Gamemode gameMode)
+        public LeaderboardController(Gamemode gameMode)
         {
             // Configure the firebase configuration for the firesharp plugin
             this.firebaseConfig = new FirebaseConfig()
             {
-                AuthSecret = "",
-                BasePath = "",
+                AuthSecret = "biDqRu7XIL1v3Fl9vTZxRBWQwg4LJot1TMih1wj4",
+                BasePath = "https://vsp-memory-leaderboard-7a822.firebaseio.com/",
             };
 
             // Create a new firebase client with the firebase configuration

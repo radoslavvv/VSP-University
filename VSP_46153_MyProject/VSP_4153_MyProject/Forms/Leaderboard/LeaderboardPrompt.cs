@@ -13,9 +13,9 @@ namespace VSP_4153_MyProject.Forms
     public partial class LeaderboardPrompt : Form
     {
         private int playerScore;
-        private LeaderboardManager leaderboardManager;
+        private LeaderboardController leaderboardManager;
 
-        public LeaderboardPrompt(int playerScore, LeaderboardManager leaderboardManager)
+        public LeaderboardPrompt(int playerScore, LeaderboardController leaderboardManager)
         {
             // Set the current player's score
             this.playerScore = playerScore;
@@ -38,6 +38,12 @@ namespace VSP_4153_MyProject.Forms
             {
                 // Show error message
                 errorMessage.Text = "This username is invalid!";
+                errorMessage.Visible = true;
+            }
+            else if(nicknameTextBox.Text.Trim().Length > 5)
+            {
+                // Show error message
+                errorMessage.Text = "This username is too long! Please enter a shorter one!";
                 errorMessage.Visible = true;
             }
             else

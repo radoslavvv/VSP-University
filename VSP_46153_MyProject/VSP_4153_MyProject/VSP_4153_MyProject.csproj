@@ -98,9 +98,8 @@
       <DependentUpon>LeaderboardPrompt.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Enums\Gamemode.cs" />
-    <Compile Include="Models\Leaderboard.cs" />
     <Compile Include="Models\LeaderboardData.cs" />
-    <Compile Include="Managers\LeaderBoardManager.cs" />
+    <Compile Include="Controllers\LeaderboardController.cs" />
     <Compile Include="Forms\GameBoards\MediumGameBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,7 +112,7 @@
     <Compile Include="Forms\GameBoards\HardGameBoard.Designer.cs">
       <DependentUpon>HardGameBoard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Managers\GameManager.cs" />
+    <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Forms\MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
