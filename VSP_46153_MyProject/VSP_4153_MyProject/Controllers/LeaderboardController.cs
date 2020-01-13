@@ -39,42 +39,46 @@ namespace VSP_4153_MyProject.Forms
         {
             List<LeaderboardData> currentLeaderboardData = new List<LeaderboardData>();
 
-            // Send a get request to the database - getting all records for the current gamemode
-            FirebaseResponse response = await this.firebaseClient.GetAsync($"{this.gameMode.ToString()}/");
-
-            // If the request response is not null
-            if (response.Body != "null")
+            try
             {
-                // Parse the JSON response to JObject
-                JObject jobject = JObject.Parse(response.Body);
+                // Send a get request to the database - getting all records for the current gamemode
+                FirebaseResponse response = await this.firebaseClient.GetAsync($"{this.gameMode.ToString()}/");
 
-                // Go through each user record in the jobject
-                foreach (var user in jobject)
+                // If the request response is not null
+                if (response.Body != "null")
                 {
-                    // Get the record's username
-                    string username = user.Key;
+                    // Parse the JSON response to JObject
+                    JObject jobject = JObject.Parse(response.Body);
 
-                    // Get the record's data for the current user
-                    JToken userData = user.Value;
-
-                    // Get the record's date
-                    DateTime date = DateTime.Parse(userData["Date"].ToString());
-
-                    // Get the record's score
-                    int score = int.Parse(userData["Score"].ToString());
-
-                    // Form a object with the collected data
-                    LeaderboardData currentLeaderBoardData = new LeaderboardData()
+                    // Go through each user record in the jobject
+                    foreach (var user in jobject)
                     {
-                        Username = username,
-                        Date = date,
-                        Score = score
-                    };
+                        // Get the record's username
+                        string username = user.Key;
 
-                    // Add the created object to the leaderboard
-                    currentLeaderboardData.Add(currentLeaderBoardData);
+                        // Get the record's data for the current user
+                        JToken userData = user.Value;
+
+                        // Get the record's date
+                        DateTime date = DateTime.Parse(userData["Date"].ToString());
+
+                        // Get the record's score
+                        int score = int.Parse(userData["Score"].ToString());
+
+                        // Form a object with the collected data
+                        LeaderboardData currentLeaderBoardData = new LeaderboardData()
+                        {
+                            Username = username,
+                            Date = date,
+                            Score = score
+                        };
+
+                        // Add the created object to the leaderboard
+                        currentLeaderboardData.Add(currentLeaderBoardData);
+                    }
                 }
             }
+            catch (Exception exception) { }
 
             // Return the leaderboard data
             return currentLeaderboardData;
@@ -96,9 +100,14 @@ namespace VSP_4153_MyProject.Forms
             // Crate the path to the record - Gamemode/username
             string path = $"{this.gameMode.ToString()}/" + leaderboardData.Username;
 
-            // Send the create request to the database
-            SetResponse response = await this.firebaseClient.SetAsync(path, leaderboardData);
-            LeaderboardData data = response.ResultAs<LeaderboardData>();
+            LeaderboardData data = null;
+            try
+            {
+                // Send the create request to the database
+                SetResponse response = await this.firebaseClient.SetAsync(path, leaderboardData);
+                data = response.ResultAs<LeaderboardData>();
+            }
+            catch (Exception exception) { }
 
             return data;
         }
@@ -109,8 +118,13 @@ namespace VSP_4153_MyProject.Forms
             // Crate the path to the record - Gamemode/username
             string path = $"{this.gameMode.ToString()}/{leaderboardData.Username}";
 
-            // Send the remove request to the database
-            FirebaseResponse response = await this.firebaseClient.DeleteAsync(path);
+            FirebaseResponse response = null;
+            try
+            {
+                // Send the remove request to the database
+                response = await this.firebaseClient.DeleteAsync(path);
+            }
+            catch (Exception exception) { }
 
             return response;
         }

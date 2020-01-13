@@ -59,7 +59,7 @@
             // 
             // leaderboardPanel
             // 
-            this.leaderboardPanel.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.leaderboardPanel.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.leaderboardPanel.Location = new System.Drawing.Point(38, 80);
             this.leaderboardPanel.Name = "leaderboardPanel";
             this.leaderboardPanel.Size = new System.Drawing.Size(353, 324);

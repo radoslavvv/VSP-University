@@ -9,7 +9,7 @@ namespace VSP_4153_MyProject
     public class Constants
     {
         // Common Constants
-        public const int StartBlocksCount = 3;
+        public const int StartBlocksCount = 5;
 
         public const int GeneratingBlocksDelay = 1000;
 

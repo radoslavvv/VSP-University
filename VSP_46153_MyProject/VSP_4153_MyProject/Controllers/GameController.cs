@@ -165,7 +165,7 @@ namespace VSP_4153_MyProject
                 int currentLevelBlockCol = randomNumber.Next(1, this.GameBoardSize + 1);
 
                 // Create the block name
-                string currentBlockName = $"panel{currentBlockRow}{currentLevelBlockCol}";
+                string currentBlockName = $"gameBlock{currentBlockRow}{currentLevelBlockCol}";
 
                 // If the current block hasn't been added already
                 if (!this.RequiredCurrentLevelBlocks.Contains(currentBlockName))
@@ -336,7 +336,7 @@ namespace VSP_4153_MyProject
             List<LeaderboardData> leaderboardData = await this.leaderboardManager.GetLeaderboard();
 
             // If the leaderboard has less than 10 records or has more than 10 and someone has smaller score than the current one
-            if ((leaderboardData.Count < 10) || (leaderboardData.Count >= 10 && leaderboardData.Any(u => u.Score < this.CurrentPlayerScore)))
+            if (this.CurrentPlayerScore > 0 && ((leaderboardData.Count < 10) || (leaderboardData.Count >= 10 && leaderboardData.Any(u => u.Score < this.CurrentPlayerScore))))
             {
                 // Create leaderboard prompt form
                 LeaderboardPrompt leaderboardPrompt = new LeaderboardPrompt(this.CurrentPlayerScore, this.leaderboardManager);

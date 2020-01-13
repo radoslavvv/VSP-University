@@ -30,7 +30,7 @@ namespace VSP_4153_MyProject.Forms
         private void easyButton_Click(object sender, EventArgs e)
         {
             // Change the color of the Easy button to Dark Gray
-            this.easyButton.BackColor = SystemColors.AppWorkspace;
+            this.easyButton.BackColor = SystemColors.ScrollBar;
 
             // Change the colors of the Medium and Hard buttons to default - Light Gray
             this.mediumButton.BackColor = SystemColors.Control;
@@ -44,7 +44,7 @@ namespace VSP_4153_MyProject.Forms
         private void mediumButton_Click(object sender, EventArgs e)
         {
             // Change the color of the Medium button to Dark Gray
-            this.mediumButton.BackColor = SystemColors.AppWorkspace;
+            this.mediumButton.BackColor = SystemColors.ScrollBar;
 
             // Change the colors of the Easy and Hard buttons to default - Light Gray
             this.easyButton.BackColor = SystemColors.Control;
@@ -58,7 +58,7 @@ namespace VSP_4153_MyProject.Forms
         private void hardButton_Click(object sender, EventArgs e)
         {
             // Change the color of the Medium button to Dark Gray
-            this.hardButton.BackColor = SystemColors.AppWorkspace;
+            this.hardButton.BackColor = SystemColors.ScrollBar;
 
             // Change the colors of the Easy and Medium buttons to default - Light Gray
             this.easyButton.BackColor = SystemColors.Control;
